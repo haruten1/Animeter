@@ -1,0 +1,1190 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+/*! destyle.css v3.0.0 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+
+/* Reset box-model and set borders */
+/* ============================================ */
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 0;
+}
+
+/* Document */
+/* ============================================ */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 3. Remove gray overlay on links for iOS.
+ */
+
+html {
+    line-height: 1.15;
+    /* 1 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+    -webkit-tap-highlight-color: transparent;
+    /* 3*/
+}
+
+/* Sections */
+/* ============================================ */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+    margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+    display: block;
+}
+
+/* Vertical rhythm */
+/* ============================================ */
+
+p,
+table,
+blockquote,
+address,
+pre,
+iframe,
+form,
+figure,
+dl {
+    margin: 0;
+}
+
+/* Headings */
+/* ============================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+}
+
+/* Lists (enumeration) */
+/* ============================================ */
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Lists (definition) */
+/* ============================================ */
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 0;
+}
+
+/* Grouping content */
+/* ============================================ */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+    box-sizing: content-box;
+    /* 1 */
+    height: 0;
+    /* 1 */
+    overflow: visible;
+    /* 2 */
+    border-top-width: 1px;
+    margin: 0;
+    clear: both;
+    color: inherit;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+    font-family: monospace, monospace;
+    /* 1 */
+    font-size: inherit;
+    /* 2 */
+}
+
+address {
+    font-style: inherit;
+}
+
+/* Text-level semantics */
+/* ============================================ */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+    text-decoration: underline dotted;
+    /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    /* 1 */
+    font-size: inherit;
+    /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/* Replaced content */
+/* ============================================ */
+
+/**
+ * Prevent vertical alignment issues.
+ */
+
+svg,
+img,
+embed,
+object,
+iframe {
+    vertical-align: bottom;
+}
+
+/* Forms */
+/* ============================================ */
+
+/**
+ * Reset form fields to make them styleable.
+ * 1. Make form elements stylable across systems iOS especially.
+ * 2. Inherit text-transform from parent.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    -webkit-appearance: none;
+    /* 1 */
+    appearance: none;
+    vertical-align: middle;
+    color: inherit;
+    font: inherit;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    text-align: inherit;
+    text-transform: inherit;
+    /* 2 */
+}
+
+/**
+ * Reset radio and checkbox appearance to preserve their look in iOS.
+ */
+
+[type="checkbox"] {
+    -webkit-appearance: checkbox;
+    appearance: checkbox;
+}
+
+[type="radio"] {
+    -webkit-appearance: radio;
+    appearance: radio;
+}
+
+/**
+ * Correct cursors for clickable elements.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    cursor: pointer;
+}
+
+button:disabled,
+[type="button"]:disabled,
+[type="reset"]:disabled,
+[type="submit"]:disabled {
+    cursor: default;
+}
+
+/**
+ * Improve outlines for Firefox and unify style with input elements & buttons.
+ */
+
+:-moz-focusring {
+    outline: auto;
+}
+
+select:disabled {
+    opacity: inherit;
+}
+
+/**
+ * Remove padding
+ */
+
+option {
+    padding: 0;
+}
+
+/**
+ * Reset to invisible
+ */
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+legend {
+    padding: 0;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+    vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+    overflow: auto;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/**
+ * 1. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+    outline-offset: -2px;
+    /* 1 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Fix font inheritance.
+ */
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    /* 1 */
+    font: inherit;
+    /* 2 */
+}
+
+/**
+ * Clickable labels
+ */
+
+label[for] {
+    cursor: pointer;
+}
+
+/* Interactive */
+/* ============================================ */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+    display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+    display: list-item;
+}
+
+/*
+ * Remove outline for editable content.
+ */
+
+[contenteditable]:focus {
+    outline: auto;
+}
+
+/* Tables */
+/* ============================================ */
+
+/**
+1. Correct table border color inheritance in all Chrome and Safari.
+*/
+
+table {
+    border-color: inherit;
+    /* 1 */
+}
+
+caption {
+    text-align: left;
+}
+
+td,
+th {
+    vertical-align: top;
+    padding: 0;
+}
+
+th {
+    text-align: left;
+    font-weight: bold;
+}
+
+$pc: 1024px; // PC
+$tab: 680px; // タブレット
+$sp: 480px; // スマホ
+
+@mixin pc {
+    @media (max-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (max-width: ($tab)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+
+body {
+    background-color: #3E434D;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    color: #fff;
+}
+
+header {
+    background-color: #2C364B;
+    height: 80px;
+
+    @include sp {
+        height: 50px;
+    }
+
+    ;
+
+    #header-inner {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+
+        @include sp {
+            height: 60px;
+        }
+
+        ;
+
+        h1 {
+            padding-left: 10px;
+
+            #header-logo {
+                height: 50px;
+
+                @include sp {
+                    height: 30px;
+                }
+
+                ;
+            }
+        }
+
+        #header-nav {
+            #header-ul {
+                display: flex;
+                padding-top: 5px;
+                padding-right: 5px;
+
+                #header-li {
+                    margin-right: 20px;
+
+                    padding: 10px 10px;
+                }
+
+                .btn--orange,
+                a.btn--orange {
+                    background-color: #f56500;
+                    border-radius: 5px;
+                }
+
+                .btn--orange:hover,
+                a.btn--orange:hover {
+                    color: #fff;
+                    background: #eb6100;
+                }
+            }
+        }
+    }
+}
+
+main {
+    #main-inner {
+        padding-top: 50px;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        @include sp {
+            padding-top: 0;
+        }
+
+        ;
+
+        #top-img {
+            #top-img-inner {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: center;
+
+                @include sp {
+                    display: block;
+                }
+
+                ;
+
+                #top-text-area {
+                    padding-top: 50px;
+
+                    @include sp {
+                        padding-top: 39px;
+                    }
+
+                    ;
+
+                    h2 {
+                        font-size: 35px;
+                        text-align: center;
+
+                        @include sp {
+                            font-size: 26px;
+                        }
+
+                        ;
+                    }
+
+                    p {
+                        font-size: 20px;
+                        padding-top: 10px;
+                        text-align: center;
+
+                        @include sp {
+                            display: block;
+                            font-weight: 300;
+                        }
+
+                        ;
+                    }
+                }
+
+                #top-img-area {
+                    margin-right: 30px;
+
+                    @include sp {
+                        margin-right: 0;
+                        margin-top: 16px;
+                    }
+
+                    ;
+
+                    img {
+                        width: 400px;
+
+                        @include sp {
+                            width: 90%;
+                            display: block;
+                            margin: 0 auto;
+                        }
+
+                        ;
+                    }
+                }
+            }
+
+            #top-btn-area {
+                margin-top: 50px;
+                text-align: center;
+
+                .top-btn {
+                    margin: 0 auto;
+                    padding: 10px;
+                    background-color: #21CAE0;
+                    border-radius: 3px;
+                }
+
+                .top-btn:hover {
+                    color: #fff;
+                    background: #156C77;
+                }
+            }
+        }
+
+        #introduction {
+            margin-top: 60px;
+            margin-bottom: 80px;
+
+            #introduction-inner {
+                padding: 0 30px;
+
+                @include sp {
+                    padding: 0 5px;
+                }
+
+                ;
+
+                h3 {
+                    font-size: 30px;
+                    font-weight: 400;
+                }
+
+                #introduction-article-area {
+                    display: flex;
+                    justify-content: space-around;
+                    padding-top: 30px;
+
+                    @include sp {
+                        display: block;
+                        padding-top: 0;
+                    }
+
+                    ;
+
+                    #first-article {
+                        @include sp {
+                            padding-top: 0;
+                        }
+
+                        ;
+                    }
+
+                    article {
+                        width: 30%;
+
+                        @include sp {
+                            width: 90%;
+                            margin: 0 auto;
+                            padding-top: 50px;
+                        }
+
+                        ;
+
+                        .article-img-area {
+                            padding-bottom: 30px;
+                            height: 282px;
+
+                            @include sp {
+                                padding-bottom: 13px;
+                                height: auto;
+                            }
+
+                            ;
+
+                            img {
+                                width: 95%;
+                                margin: 0 auto;
+                                display: block;
+                            }
+
+                            #tv-img {
+                                padding-top: 40px;
+
+                                @include sp {
+                                    display: block;
+                                }
+
+                                ;
+                            }
+
+                            #distance-img {
+                                padding-top: 20px;
+                            }
+                        }
+
+                        .article-text-area {
+                            h4 {
+                                font-size: 23px;
+                                text-align: center;
+                                padding-bottom: 30px;
+                                height: 84px;
+
+                                @include sp {
+                                    height: auto;
+                                    padding-bottom: 17px;
+                                }
+
+                                ;
+                            }
+
+                            p {
+                                font-weight: 100;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #2C364B;
+    height: 80px;
+    text-align: center;
+    padding-top: 30px;
+
+    p {
+        font-weight: 200;
+    }
+}
+
+.mypage-area {
+    max-width: 800px;
+    margin: 0 auto;
+    .profile-area {
+        .my-img-area {
+            .my-img{
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+        .my-name-area{
+            padding-top: 10px;
+            .my-name{
+                font-size: 39px;
+                text-align: center;
+            }
+            .my-id{
+                padding-top: 5px;
+                text-align: center;
+            }
+        }
+        .profile-btn-area{
+            text-align: center;
+            padding-top: 15px;
+            
+            .profile-btn {
+                margin: 0 auto;
+                padding: 10px;
+                background-color: #21CAE0;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .profile-btn:hover {
+                color: #fff;
+                background: #156C77;
+            }
+        }
+    }
+    .my-anime-area{
+        padding-top: 30px;
+        .my-anime-area-inner{
+            width: 700px;
+            margin: 0 auto;
+            padding-top: 30px;
+            height: 1000px;
+            /*タブ切り替え全体のスタイル*/
+            .tabs {
+                margin-top: 50px;
+                padding-bottom: 40px;
+                width: 100%;
+                margin: 0 auto;
+                color:white;
+                /*タブのスタイル*/
+                .tab_item {
+                    width: calc(100%/2);
+                    height: 50px;
+                    border-bottom: 3px solid #ffff;
+                    line-height: 50px;
+                    font-size: 16px;
+                    text-align: center;
+                    color: #565656;
+                    display: block;
+                    float: left;
+                    text-align: center;
+                    font-weight: bold;
+                    transition: all 0.2s ease;
+                }
+                .tab_item:hover {
+                    opacity: 0.75;
+                }
+                /*ラジオボタンを全て消す*/
+                input[name="tab_item"] {
+                    display: none;
+                }
+                
+                /*選択されているタブのコンテンツのみを表示*/
+                #all:checked ~ #all_content,
+                #programming:checked ~ #programming_content,
+                #design:checked ~ #design_content {
+                    display: block;
+                }
+                
+                /*選択されているタブのスタイルを変える*/
+                .tabs input:checked + .tab_item {
+                    color: #fff;
+                    border-bottom: 3px solid #21CAE0;
+                }
+                /*タブ切り替えの中身のスタイル*/
+                .tab_content {
+                    display: none;
+                    clear: both;
+                    overflow: hidden;
+                    .tab_content_description{
+                        .my-animelog-article{
+                            margin-top: 40px;
+                            background-color: #35373E;
+                            padding: 20px 20px;
+                            .animelog-name-area{
+                                display: flex;
+                                .animelog-my-img{
+                                    border-radius: 50%;
+                                    width: 50px;
+                                    height: 50px;
+                                    object-fit: cover;
+                                    margin-right: 10px;
+                                }
+                                .my-animelog-my-name{
+                                    font-size: 25px;
+                                    font-weight: 400;
+                                    padding-top: 5px;
+                                }
+                            }
+                            .animelog-text-area{
+                                text-align: center;
+                                padding-top: 10px;
+                                p{
+                                    display: inline-block;
+                                }
+                                .animelog-anime-title{
+                                    font-size: 30px;
+                                    padding-right: 5px;
+                                }
+                                .animelog-register{
+                                    font-size: 20px;
+                                    font-weight: 300;
+                                }
+                            }
+                            .animelog-bottom-area{
+                                display: flex;
+                                justify-content: space-between;
+                                padding-top: 20px;
+                                .animelog-rank-area{
+                                    p{
+                                        display: inline-block;
+                                    }
+                                    .animelog-rank{
+                                        font-size: 15px;
+                                        font-weight: 300;
+                                    }
+                                    .animelog-bronz{
+                                        font-size: 20px;
+                                        color: #AC5409;
+                                    }
+                                }
+                                .animelog-time-area{
+                                    .animelog-time{
+                                        font-weight: 200;
+                                    }
+                                }
+                            }
+                        }
+                        .my-anime-article{
+                            margin-top: 40px;
+                            background-color: #35373E;
+                            padding: 20px 20px;
+                            .my-anime-rank-area{
+                                .fa-crown{
+                                    display: inline-block;
+                                    
+                                }
+                                .crown{
+                                    font-size: 30px;
+                                }
+                                .my-anime-bronz{
+                                    color: #AC5409;
+                                }
+                                p{
+                                    display: inline-block;
+                                }
+                                .my-anime-rank{
+                                    font-size: 15px;
+                                    font-weight: 300;
+                                }
+                                .my-anime-bronz{
+                                    font-size: 20px;
+                                    color: #AC5409;
+                                }
+                            }
+                            .my-anime-text-area{
+                                text-align: center;
+                                padding-top: 10px;
+                                p{
+                                    display: inline-block;
+                                }
+                                .my-anime-title{
+                                    font-size: 30px;
+                                    padding-right: 5px;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+
+.search-area{
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    #search-title{
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    #keyword-search-area{
+        margin-left: 10px;
+        #search-form{
+            margin-bottom: 50px;
+            #sbox1{
+                background:#eee;
+                height: 30px;
+                width: 65%;
+                padding-left: 5px;
+                color: black;
+            }
+            #sbtn1{
+                background: #21CAE0;
+                height: 30px;
+                width: 10%;
+                text-align: center;
+            }
+            #sbtn1:hover {
+                background: #156C77;
+            }
+        }
+    }
+    #by-year-area{
+        padding-left: 10px;
+        .by-year-title{
+            font-size: 25px;
+        }
+        #by-year-select-area{
+            padding: 0 20px;
+            margin-top: 20px;
+            .by-year-box{
+                margin-top: 13px;
+                .by-year-year{
+                    font-size: 21px;
+                    background-color: #ffff;
+                    color: #453B3B;
+                    padding: 5px 20px;
+                }
+                .by-year-season-area{
+                    padding: 10px 30px;
+                    .by-year-season{
+                        font-size: 21px;
+                        font-weight: 300;
+                        margin-right: 30px;
+                        color: #21CAE0;
+                        border-bottom: solid 1px #21CAE0;
+                        @include sp {
+                            display: block;
+                            margin: 0;
+                            padding-top: 5px;
+                            width: 110px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.search-result-area{
+    padding-bottom: 0px;
+}
+
+#anime-search-result-area{
+    .my-anime-article{
+        margin-top: 40px;
+        margin-bottom: 20px;
+        background-color: #35373E;
+        padding: 20px 20px;
+        .my-anime-rank-area{
+            .fa-crown{
+                display: inline-block;
+            }
+            .crown{
+                font-size: 30px;
+            }
+            .my-anime-bronz{
+                color: #AC5409;
+            }
+            p{
+                display: inline-block;
+            }
+            .my-anime-rank{
+                font-size: 15px;
+                font-weight: 300;
+            }
+            .my-anime-bronz{
+                font-size: 20px;
+                color: #AC5409;
+            }
+        }
+        .my-anime-text-area{
+            text-align: center;
+            padding-top: 10px;
+            p{
+                display: inline-block;
+            }
+            .my-anime-title{
+                font-size: 30px;
+                padding-right: 5px;
+            }
+        }
+    }
+}
+
+#user-search-result-area{
+    .user-article{
+        margin: 0 auto;
+        background-color: #35373E;
+        padding: 20px 20px;
+        width: 50%;
+        display: flex;
+        .user-search-result-img-area{
+            .user-search-result-img{
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+        .user-search-result-name-area{
+            padding-left: 20px;
+            .user-search-result-name{
+                font-size: 30px;
+                font-weight: 500;
+                padding-bottom: 5px;
+            }
+            .user-search-result-id{
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.animeter-area{
+    .animeter-img-area{
+        text-align: center;
+        .animeter-img{
+            width: 220px;
+            margin: 0 auto;
+        }
+    }
+    .animeter-user-area{
+        display: flex;
+        margin-bottom: 50px;
+        .animeter-user-img{
+            border-radius: 50%;
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                margin: 0 auto;
+                display: block;
+        }
+    }
+    .animeter-result-area{
+        .meter-area{
+            text-align: center;
+            margin-bottom: 30px;
+            .meter-img{
+                width: 176px;
+                margin-bottom: 30px;
+            }
+            .animeter-article-cover{
+                margin-bottom: 30px;
+                .animeter-article{
+                background-color: #35373E;
+                width: 70%;
+                margin: 0 auto;
+                padding: 10px 20px;
+                    .animeter-rank-area{
+                        display: flex;
+                        justify-content: space-between;
+                        .animeter-my-anime-rank-area{
+                            display: flex;
+                            .crown{
+                                font-size: 20px;
+                                color: #AC5409;
+                            }
+                            .animeter-rank{
+                                padding-left: 10px;
+                                padding-top: 4px;
+                                font-size: 15px;
+                                font-weight: 300;
+                            }
+                            .animeter-bronz{
+                                font-size: 20px;
+                                color: #AC5409;
+                                padding-left: 5px;
+                            }
+
+                        }
+                        .animeter-you-anime-rank-area{
+                            display: flex;
+                            .crown{
+                                font-size: 20px;
+                                color: #AC5409;
+                            }
+                            .animeter-rank{
+                                padding-left: 10px;
+                                padding-top: 4px;
+                                font-size: 15px;
+                                font-weight: 300;
+                            }
+                            .animeter-bronz{
+                                font-size: 20px;
+                                color: #AC5409;
+                                padding-left: 5px;
+                            }
+                        }
+                    }
+                    .animeter-title-area{
+                        .animeter-title{
+                            font-size: 33px;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}

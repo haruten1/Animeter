@@ -1,0 +1,33 @@
+mysqlの起動
+mysql.server start
+
+データベースの内容をリセット
+rails db:migrate:reset
+
+バンドルインストール
+bundle install
+
+Rspec実行コマンド
+bundle exec rspec spec/requests/
+
+レイルズコンソール
+rails console
+exit
+
+デバッガー
+debugger
+quit
+
+ルートの確認
+rails routes
+
+
+scssコンパイル
+rake assets:precompile
+
+rake assets:clean
+
+mysql確認
+show tables；
+
+show columns from テーブル名;
