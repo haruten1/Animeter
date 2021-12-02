@@ -1,0 +1,84 @@
+
+        <main>
+            <div id="main-inner">
+                <div class="mypage-area">
+                    <div class="profile-area">
+                        <div class="my-img-area">
+                            <img src="./img/pexels-photo-177809.jpeg" alt="" class="my-img">
+                        </div>
+                        <div class="my-name-area">
+                            <p class="my-name"><%= @user.name %></p>
+                            <p class="my-id"><%= @user.Animeter_id %></p>
+                        </div>
+                        <div class="profile-btn-area">
+                            <a href="#" class="profile-btn">プロフィール編集</a>
+                        </div>
+                    </div>
+                    <div class="my-anime-area">
+                        <div class="my-anime-area-inner">
+                            <div class="tabs">
+                                <input id="all" type="radio" name="tab_item" checked>
+                                <label class="tab_item" for="all">アニメログ</label>
+                                <input id="design" type="radio" name="tab_item">
+                                <label class="tab_item" for="design">登録アニメ</label>
+                                <div class="tab_content" id="all_content">
+                                  <div class="tab_content_description">
+                                    <article class="my-animelog-article">
+                                        <div class="animelog-name-area">
+                                            <img src="./img/pexels-photo-177809.jpeg" alt="" class="animelog-my-img">
+                                            <p class="my-animelog-my-name">Haruten</p>
+                                        </div>
+                                        <div class="animelog-text-area">
+                                            <p class="animelog-anime-title">吸血鬼すぐ死ぬ</p>
+                                            <p class="animelog-register">を登録しました</p>
+                                        </div>
+                                        <div class="animelog-bottom-area">
+                                            <div class="animelog-rank-area">
+                                                <p class="animelog-rank">Rank</p>
+                                                <p class="animelog-bronz">Bronz</p>
+                                            </div>
+                                            <div class="animelog-time-area">
+                                                <p class="animelog-time">2021-11-10-19:30</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="my-animelog-article">
+                                        <div class="animelog-name-area">
+                                            <img src="./img/pexels-photo-177809.jpeg" alt="" class="animelog-my-img">
+                                            <p class="my-animelog-my-name">Haruten</p>
+                                        </div>
+                                        <div class="animelog-text-area">
+                                            <p class="animelog-anime-title">吸血鬼すぐ死ぬ</p>
+                                        </div>
+                                        <div class="animelog-bottom-area">
+                                            <div class="animelog-rank-area">
+                                                <p class="animelog-rank">Rank</p>
+                                                <p class="animelog-bronz">Bronz</p>
+                                            </div>
+                                            <div class="animelog-time-area">
+                                                <p class="animelog-time">2021-11-10-19:30</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                  </div>
+                                </div>
+                                <div class="tab_content" id="design_content">
+                                  <div class="tab_content_description">
+                                    <article class="my-anime-article">
+                                        <div class="my-anime-rank-area">
+                                            <i class="fas fa-crown my-anime-bronz crown"></i>
+                                            <p class="my-anime-rank">Rank</p>
+                                            <p class="my-anime-bronz">Bronz</p>
+                                        </div>
+                                        <div class="my-anime-text-area">
+                                            <p class="my-anime-title">吸血鬼すぐ死ぬ</p>
+                                        </div>
+                                    </article>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>

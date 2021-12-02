@@ -1,2 +1,37 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<main>
+    <div class="main-inner">
+            <h2 class="top-title new-account-title">新規登録</h2>
+            <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <%= form_with(model: @user, local: true) do |f| %>
+                    <%= render 'shared/error_messages' %>
+                    <div id="form-item">
+                        <%= f.label :ユーザー名 %>
+                        <%= f.text_field :name %>
+                    </div>
+                    
+                    <div id="form-item">
+                        <%= f.label :検索用ID %>
+                        <%= f.text_field :Animeter_id %>
+                    </div>
+
+                    <div id="form-item">
+                        <%= f.label :Email %>
+                        <%= f.email_field :mail %>
+                    </div>
+
+                    <div id="form-item">
+                        <%= f.label :パスワード %>
+                        <%= f.password_field :password %>
+                    </div>
+
+                    <div id="form-item">
+                        <%= f.label :password_confirmation, "パスワード（確認）" %>
+                        <%= f.password_field :password_confirmation %>
+                    </div>
+                    
+                    <%= f.submit "Create my account", class: "btn btn-primary" %>
+                <% end %>
+            </div>
+    </div>
+</main>
