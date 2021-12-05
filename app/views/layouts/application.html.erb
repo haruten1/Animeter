@@ -18,12 +18,20 @@
                 <h1 ><%= image_tag 'ロゴ３.png' , id: "header-logo"%></h1>
                 <nav id="header-nav">
                     <ul id="header-ul">
-                        <li >新規登録</li>
-                        <%= link_to "ログイン", signup_path, class: "btn btn--orange" , id: "header-li"%>
+                        <% if logged_in? %>
+                            <li><%= link_to "Profile", current_user %></li>
+                            <li><%= link_to "Settings", '#' %></li>
+                        <% else %>
+                            <li >新規登録</li>
+                            <%= link_to "ログイン", signup_path, class: "btn btn--orange" , id: "header-li"%>
+                        <% end %>
                     </ul>
                 </nav>
             </div>
         </header>
+        <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
         <%= yield %>
         <footer>
             <div id="footer-pc">

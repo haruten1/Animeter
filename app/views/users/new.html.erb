@@ -7,27 +7,27 @@
                     <%= render 'shared/error_messages' %>
                     <div id="form-item">
                         <%= f.label :ユーザー名 %>
-                        <%= f.text_field :name %>
+                        <%= f.text_field :name, class: 'form-control' %>
                     </div>
                     
                     <div id="form-item">
                         <%= f.label :検索用ID %>
-                        <%= f.text_field :Animeter_id %>
+                        <%= f.text_field :Animeter_id%>
                     </div>
 
                     <div id="form-item">
                         <%= f.label :Email %>
-                        <%= f.email_field :mail %>
+                        <%= f.email_field :mail%>
                     </div>
 
                     <div id="form-item">
                         <%= f.label :パスワード %>
-                        <%= f.password_field :password %>
+                        <%= f.password_field :password%>
                     </div>
 
                     <div id="form-item">
                         <%= f.label :password_confirmation, "パスワード（確認）" %>
-                        <%= f.password_field :password_confirmation %>
+                        <%= f.password_field :password_confirmation%>
                     </div>
                     
                     <%= f.submit "Create my account", class: "btn btn-primary" %>

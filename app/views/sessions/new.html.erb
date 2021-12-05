@@ -1,0 +1,22 @@
+<h1>Log in</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+
+        <div id="form-item">
+            <%= f.label :Email %>
+            <%= f.email_field :mail%>
+        </div>
+
+        <div id="form-item">
+            <%= f.label :パスワード %>
+            <%= f.password_field :password%>
+        </div>
+
+      <%= f.submit "ログイン", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>アカウント登録がまだの方： <%= link_to "新規登録", signup_path %></p>
+  </div>
+</div>

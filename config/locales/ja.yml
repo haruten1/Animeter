@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+          name: ユーザー名
+          Animeter＿id: 所属
+          mail: メールアドレス
+          password: パスワード
+          password_confirmation: パスワード（確認)

@@ -28,6 +28,13 @@ rake assets:precompile
 rake assets:clean
 
 mysql確認
+※エラー 1046
+use Animeter_development;
+
+mysql -u root -p
+
 show tables；
 
 show columns from テーブル名;
+
+SELECT * FROM users;
