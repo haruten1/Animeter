@@ -1,0 +1,20 @@
+
+        <main>
+            <div id="main-inner">
+                <div class="search-area search-result-area">
+                    <h2 id="search-title">検索</h2>
+                    <div id="keyword-search-area">
+                        <form id="search-form" action="自分のサイトURL" method="get">
+                            <input id="sbox1"  name="s" type="text" placeholder="作品名" />
+                            <input id="sbtn1" type="submit" value="検索" />
+                        </form>
+                        
+                        <%= form_with url: works_search_path, method: :get, local: true ,id:"search-form" do |form| %>
+                            <%= text_field_tag :search,"",{id:"sbox1"} %>
+                            <%= submit_tag 'Search', :name => nil ,id:"sbtn1"%>
+                        <% end %>
+
+                    </div>
+                </div>
+            </div>
+        </main>

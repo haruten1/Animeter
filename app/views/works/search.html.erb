@@ -1,0 +1,38 @@
+
+        <main>
+            <div id="main-inner">
+                <div class="search-area search-result-area">
+                    <h2 id="search-title">「<%=@title%>」の検索結果</h2>
+                    <div id="keyword-search-area">
+                        <%= form_with url: works_search_path, method: :get, local: true ,id:"search-form" do |form| %>
+                            <%= text_field_tag :search,"",{id:"sbox1"} %>
+                            <%= submit_tag '検索', :name => nil ,id:"sbtn1"%>
+                        <% end %>
+
+                    </div>
+                </div>
+                <div id="anime-search-result-area">
+                    <% @works.each do |work| %>
+                        <article class="my-anime-article">
+                            <% if current_user.ranked_by?(work.id) %>
+                                <div class="my-anime-rank-area">
+                                    <i class="fas fa-crown my-anime-bronz crown"></i>
+                                    <p class="my-anime-rank">Rank</p>
+                                    <p class="my-anime-bronz">Bronz</p>
+                                </div>
+                            <% else %>
+                                <div class="my-anime-rank-area">
+                                    <i class="fas fa-crown my-anime-bronz crown"></i>
+                                    <p class="my-anime-rank">Rank</p>
+                                    <p class="my-anime-bronz">none</p>
+                                </div>
+                                <%= link_to("Gold", "/my_work/create/#{work.id}", {method: "post"})%> 
+                            <% end %>
+                            <div class="my-anime-text-area">
+                                <p class="my-anime-title"><%= work.title %></p>
+                            </div>
+                        </article>
+                    <% end%>
+                </div>
+            </div>
+        </main>

@@ -5,4 +5,11 @@ class User < ApplicationRecord
     validates :mail, presence: true, length: { maximum: 100 },format: { with: VALID_EMAIL_REGEX },uniqueness: true
     has_secure_password 
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+
+    has_many :my_works
+
+    def ranked_by?(work_id)
+        my_works.where(work_id: work_id).exists?
+    end
+
 end
