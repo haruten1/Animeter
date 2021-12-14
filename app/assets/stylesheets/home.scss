@@ -1038,8 +1038,18 @@ footer {
         }
     }
 }
+
 .search-result-area{
     padding-bottom: 0px;
+}
+.bronze{
+    color: #AC5409;
+}
+.silver{
+    color:#c0c0c0
+}
+.gold{
+    color: #ffd700;
 }
 
 #anime-search-result-area{
@@ -1048,27 +1058,49 @@ footer {
         margin-bottom: 20px;
         background-color: #35373E;
         padding: 20px 20px;
-        .my-anime-rank-area{
-            .fa-crown{
-                display: inline-block;
+        .my-anime-rank-wrapper{
+            display: flex;
+            justify-content: space-between;
+            .my-anime-rank-area{
+                .fa-crown{
+                    display: inline-block;
+                }
+                .crown{
+                    font-size: 20px;
+                }
+                
+                p{
+                    display: inline-block;
+                }
+                .my-anime-rank{
+                    font-size: 15px;
+                    font-weight: 300;
+                }
+                .my-anime-rank-result{
+                    font-size: 20px;
+                }
             }
-            .crown{
-                font-size: 30px;
+            .my_anime_rank_update-area{
+                .fa-sync-alt{
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+                .fa-plus{
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+                a{
+                    margin-right: 10px;
+                }
+                .crown{
+                    font-size: 30px;
+                }
+                .trash{
+                    font-size: 30px;
+                }
+                
             }
-            .my-anime-bronz{
-                color: #AC5409;
-            }
-            p{
-                display: inline-block;
-            }
-            .my-anime-rank{
-                font-size: 15px;
-                font-weight: 300;
-            }
-            .my-anime-bronz{
-                font-size: 20px;
-                color: #AC5409;
-            }
+            
         }
         .my-anime-text-area{
             text-align: center;

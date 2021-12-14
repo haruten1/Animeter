@@ -9,7 +9,9 @@ class User < ApplicationRecord
     has_many :my_works
 
     def ranked_by?(work_id)
-        my_works.where(work_id: work_id).exists?
+        works= MyWork.find_by(work_id: work_id)
+        
+        return works
     end
 
 end
