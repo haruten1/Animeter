@@ -40,4 +40,10 @@ class Work < ApplicationRecord
         end
       end
     end
+
+  def whats_rank(work_id,user_id)
+    work= MyWork.find_by(work_id:work_id,user_id:user_id)
+    return work  
+  end
+
 end

@@ -8,7 +8,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @work = Work.find_by(title:"やはり俺の青春ラブコメはまちがっている。")
+    @my_works = MyWork.where(user_id:params[:id])
+    @my_works_log = @my_works.first(5)
+    @my_works.order(rank: "DESC") 
+    
   end
 
   def create
@@ -36,11 +39,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def form
+  end
+
+  def search
+    @users = User.where('Animeter_id LIKE ?', "%#{params[:search]}%") if params[:search].present?
+    @user_name =params[:search]
+  end
+
   private
 
     def user_params
       params.require(:user).permit(:name, :mail, :password,:Animeter_id,
-                                   :password_confirmation)
+                                  :password_confirmation)
     end
 
     def logged_in_user

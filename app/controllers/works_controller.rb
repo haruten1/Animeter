@@ -4,6 +4,6 @@ class WorksController < ApplicationController
 
     def search
         @works = Work.where('title LIKE ?', "%#{params[:search]}%") if params[:search].present?
-        @title = params[:search]
+        @user_name = params[:search]
     end
 end

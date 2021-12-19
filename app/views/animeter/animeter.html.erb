@@ -1,0 +1,244 @@
+<main>
+    <div id="main-inner">
+        <div class="animeter-area">
+            <h2 class="animeter-img-area">
+                <%= image_tag 'ロゴ３.png' , class: "animeter-img"%>
+            </h2>
+            <div class="animeter-user-area">
+                <%= image_tag 'pexels-photo-177809.jpeg' , class: "animeter-user-img"%>
+                <%= image_tag 'pexels-photo-177809.jpeg' , class: "animeter-user-img"%>
+            </div>
+            <%zero_meter_count= 0 %>
+            <%two_meter_count=0%>
+            <%three_meter_count=0%>
+            <%four_meter_count=0%>
+            <div class="animeter-result-area">
+                <% @common_works.each do |work| %>
+                    <% work.each do |work_2| %>
+                        <%my_work=work_2.whats_rank(work_2.id,current_user.id)%>
+                        <%my_work_rank=my_work["rank"]%>
+                        <%your_work=work_2.whats_rank(work_2.id,params[:id])%>
+                        <%your_work_rank=your_work["rank"]%>
+                        <% if my_work_rank+your_work_rank==6 %>
+                            <%zero_meter_count=zero_meter_count+1%>
+                            <div class="meter-area zero-meter">
+                                <% if zero_meter_count ==1 %>
+                                    <%= image_tag 'zero.png' , class: "meter-img"%>
+                                <%end%>
+                                <div class="animeter-article-cover">
+                                    <article class="animeter-article">
+                                        <div class="animeter-rank-area">
+                                            <div class="animeter-my-anime-rank-area">
+                                                <i class="fas fa-crown crown gold"></i>
+                                                <p class="animeter-rank ">Rank</p>
+                                                <p class="animeter-bronz gold">Gold</p>
+                                            </div>
+                                            <div class="animeter-you-anime-rank-area">
+                                                <i class="fas fa-crown crown gold"></i>
+                                                <p class="animeter-rank">Rank</p>
+                                                <p class="animeter-bronz gold">Gold</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="animeter-title-area">
+                                            <p class="animeter-title"><%= work_2.title%></p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        <%end%>
+                    <% end%>
+                <% end%>
+                <% @common_works.each do |work| %>
+                    <% work.each do |work_2| %>
+                        <%my_work=work_2.whats_rank(work_2.id,current_user.id)%>
+                        <%my_work_rank=my_work["rank"]%>
+                        <%your_work=work_2.whats_rank(work_2.id,params[:id])%>
+                        <%your_work_rank=your_work["rank"]%>
+                        <%one_meter_count=0%>
+                        <% if my_work_rank+your_work_rank==5 %>
+                            <%one_meter_count=one_meter_count+1%>
+                            <div class="meter-area 1-meter">
+                                <% if one_meter_count ==1 %>
+                                    <%= image_tag '1meter.png' , class: "meter-img"%>
+                                <%end%>
+                                <div class="animeter-article-cover">
+                                    <article class="animeter-article">
+                                        <div class="animeter-rank-area">
+                                            <div class="animeter-my-anime-rank-area">
+                                                <%if my_work_rank==3%>
+                                                    <i class="fas fa-crown crown gold"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz gold">Gold</p>
+                                                <%elsif my_work_rank==2%>
+                                                    <i class="fas fa-crown crown silver"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz silver">Silver</p>
+                                                <%end%>
+                                            </div>
+                                            <div class="animeter-you-anime-rank-area">
+                                                <%if your_work_rank==3%>
+                                                    <i class="fas fa-crown crown gold"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz gold">Gold</p>
+                                                <%elsif your_rank==2%>
+                                                    <i class="fas fa-crown crown silver"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz silver">Silver</p>
+                                                <%end%>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="animeter-title-area">
+                                            <p class="animeter-title"><%=work_2.title%></p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        <%end%>
+                    <% end%>
+                <% end%>
+                <% @common_works.each do |work| %>
+                    <% work.each do |work_2| %>
+                        <%my_work=work_2.whats_rank(work_2.id,current_user.id)%>
+                        <%my_work_rank=my_work["rank"]%>
+                        <%your_work=work_2.whats_rank(work_2.id,params[:id])%>
+                        <%your_work_rank=your_work["rank"]%>
+                        <% if my_work_rank+your_work_rank==4 %>
+                            <%two_meter_count=two_meter_count+1%>
+                            <div class="meter-area 2-meter">
+                                <% if two_meter_count ==1 %>
+                                    <%= image_tag '2meter.png' , class: "meter-img"%>
+                                <%end%>
+                                <div class="animeter-article-cover">
+                                    <article class="animeter-article">
+                                        <div class="animeter-rank-area">
+                                            <div class="animeter-my-anime-rank-area">
+                                                <%if my_work_rank==3%>
+                                                    <i class="fas fa-crown crown gold"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz gold">Gold</p>
+                                                <%elsif my_work_rank==2%>
+                                                    <i class="fas fa-crown crown silver"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz silver">Silver</p>
+                                                <%elsif my_work_rank==1%>
+                                                    <i class="fas fa-crown crown bronze"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz bronze">Bronze</p>
+                                                <%end%>
+                                            </div>
+                                            <div class="animeter-you-anime-rank-area">
+                                                <%if your_work_rank==3%>
+                                                    <i class="fas fa-crown crown gold"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz gold">Gold</p>
+                                                <%elsif your_work_rank==2%>
+                                                    <i class="fas fa-crown crown silver"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz silver">Silver</p>
+                                                <%elsif your_work_rank==1%>
+                                                    <i class="fas fa-crown crown bronze"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz bronze">Bronze</p>
+                                                <%end%>
+                                            </div>
+                                        </div>
+                                        <div class="animeter-title-area">
+                                            <p class="animeter-title"><%=work_2.title%></p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        <%end%>
+                    <% end%>
+                <% end%>
+
+                <% @common_works.each do |work| %>
+                    <% work.each do |work_2| %>
+                        <%my_work=work_2.whats_rank(work_2.id,current_user.id)%>
+                        <%my_work_rank=my_work["rank"]%>
+                        <%your_work=work_2.whats_rank(work_2.id,params[:id])%>
+                        <%your_work_rank=your_work["rank"]%>
+                        <% if my_work_rank+your_work_rank==3 %>
+                            <%three_meter_count=three_meter_count+1%>
+                            <div class="meter-area 3-meter">
+                                <% if three_meter_count ==1 %>
+                                    <%= image_tag '3meter.png' , class: "meter-img"%>
+                                <%end%>
+                                <div class="animeter-article-cover">
+                                    <article class="animeter-article">
+                                        <div class="animeter-rank-area">
+                                            <div class="animeter-my-anime-rank-area">
+                                                <%if my_work_rank==2%>
+                                                    <i class="fas fa-crown silver crown"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz silver">Silver</p>
+                                                <%elsif my_work_rank==1%>
+                                                    <i class="fas fa-crown bronze crown"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz bronze">Bronze</p>
+                                                <%end%>
+                                            </div>
+                                            <div class="animeter-you-anime-rank-area">
+                                                <%if your_work_rank==2%>
+                                                    <i class="fas fa-crown silver crown"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz silver">Silver</p>
+                                                <%elsif your_work_rank==1%>
+                                                    <i class="fas fa-crown bronze crown"></i>
+                                                    <p class="animeter-rank">Rank</p>
+                                                    <p class="animeter-bronz bronze">Bronze</p>
+                                                <%end%>
+                                            </div>
+                                        </div>
+                                        <div class="animeter-title-area">
+                                            <p class="animeter-title"><%=work_2.title%></p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        <%end%>
+                    <% end%>
+                <% end%>
+                
+                <% @common_works.each do |work| %>
+                    <% work.each do |work_2| %>
+                        <%my_work=work_2.whats_rank(work_2.id,current_user.id)%>
+                        <%my_work_rank=my_work["rank"]%>
+                        <%your_work=work_2.whats_rank(work_2.id,params[:id])%>
+                        <%your_work_rank=your_work["rank"]%>
+                        <% if my_work_rank+your_work_rank==2 %>
+                            <%four_meter_count=four_meter_count+1%>
+                            <div class="meter-area 4-meter">
+                                <% if four_meter_count ==1 %>
+                                    <%= image_tag '4meter.png' , class: "meter-img"%>
+                                <%end%>
+                                <div class="animeter-article-cover">
+                                    <article class="animeter-article">
+                                        <div class="animeter-rank-area">
+                                            <div class="animeter-my-anime-rank-area">
+                                                <i class="fas fa-crown crown bronze"></i>
+                                                <p class="animeter-rank">Rank</p>
+                                                <p class="animeter-bronz bronze">Bronz</p>
+                                            </div>
+                                            <div class="animeter-you-anime-rank-area">
+                                                <i class="fas fa-crown  crown bronze"></i>
+                                                <p class="animeter-rank">Rank</p>
+                                                <p class="animeter-bronz bronze">Bronze</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="animeter-title-area">
+                                            <p class="animeter-title"><%=work_2.title%></p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        <%end%>
+                    <% end%>
+                <% end%>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,26 @@
+
+<main>
+    <div id="main-inner">
+        <div class="search-area search-result-area">
+            <h2 id="search-title"><%=@user_name%>の検索結果</h2>
+            <div id="keyword-search-area">
+                <%= form_with url: users_search_path, method: :get, local: true ,id:"search-form" do |form| %>
+                    <%= text_field_tag :search,"",{id:"sbox1"} %>
+                    <%= submit_tag '検索', :name => nil ,id:"sbtn1"%>
+                <% end %>
+            </div>
+        </div>
+        <div id="anime-search-result-area">
+            <% @users.each do |user| %>
+                <article class="my-animelog-article">
+                    <%= link_to"/users/#{user.id}", method: "post",remote: "true" do%>
+                        <div class="animelog-name-area">
+                            <%= image_tag 'pexels-photo-177809.jpeg' , class: "animelog-my-img"%>
+                            <p class="my-animelog-my-name"><%= user.name %></p>
+                        </div>
+                    <% end %>
+                </article>
+            <% end%>
+        </div>
+    </div>
+</main>

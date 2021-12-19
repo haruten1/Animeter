@@ -12,6 +12,10 @@
     @include box_sizing;
 }
 
+article{
+    filter: drop-shadow(0px 1px 3px rgba(0,0,0,0.6));
+}
+
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
@@ -814,7 +818,7 @@ footer {
             width: 700px;
             margin: 0 auto;
             padding-top: 30px;
-            height: 1000px;
+            
             /*タブ切り替え全体のスタイル*/
             .tabs {
                 margin-top: 50px;
@@ -853,7 +857,7 @@ footer {
                 }
                 
                 /*選択されているタブのスタイルを変える*/
-                .tabs input:checked + .tab_item {
+                input:checked + .tab_item {
                     color: #fff;
                     border-bottom: 3px solid #21CAE0;
                 }
@@ -909,9 +913,8 @@ footer {
                                         font-size: 15px;
                                         font-weight: 300;
                                     }
-                                    .animelog-bronz{
+                                    .animelog-rank-name{
                                         font-size: 20px;
-                                        color: #AC5409;
                                     }
                                 }
                                 .animelog-time-area{
@@ -925,27 +928,46 @@ footer {
                             margin-top: 40px;
                             background-color: #35373E;
                             padding: 20px 20px;
-                            .my-anime-rank-area{
-                                .fa-crown{
+                            .my-anime-rank-wrapper{
+                                display: flex;
+                                justify-content: space-between;
+                                .my-anime-rank-area{
+                                    .fa-crown{
                                     display: inline-block;
+                                    }
+                                    .crown{
+                                        font-size: 30px;
+                                    }
+                                    p{
+                                        display: inline-block;
+                                    }
+                                    .my-anime-rank{
+                                        font-size: 15px;
+                                        font-weight: 300;
+                                    }
+                                    .my-anime-rank-result{
+                                        font-size: 20px;
+                                    }
+                                }
+                                .my_anime_rank_update-area{
+                                    .fa-sync-alt{
+                                        font-size: 20px;
+                                        margin-right: 10px;
+                                    }
+                                    .fa-plus{
+                                        font-size: 20px;
+                                        margin-right: 10px;
+                                    }
+                                    a{
+                                        margin-right: 10px;
+                                    }
+                                    .crown{
+                                        font-size: 30px;
+                                    }
+                                    .trash{
+                                        font-size: 30px;
+                                    }
                                     
-                                }
-                                .crown{
-                                    font-size: 30px;
-                                }
-                                .my-anime-bronz{
-                                    color: #AC5409;
-                                }
-                                p{
-                                    display: inline-block;
-                                }
-                                .my-anime-rank{
-                                    font-size: 15px;
-                                    font-weight: 300;
-                                }
-                                .my-anime-bronz{
-                                    font-size: 20px;
-                                    color: #AC5409;
                                 }
                             }
                             .my-anime-text-area{
@@ -1147,6 +1169,8 @@ footer {
     }
 }
 
+
+
 .animeter-area{
     .animeter-img-area{
         text-align: center;
@@ -1189,7 +1213,6 @@ footer {
                             display: flex;
                             .crown{
                                 font-size: 20px;
-                                color: #AC5409;
                             }
                             .animeter-rank{
                                 padding-left: 10px;
@@ -1199,7 +1222,6 @@ footer {
                             }
                             .animeter-bronz{
                                 font-size: 20px;
-                                color: #AC5409;
                                 padding-left: 5px;
                             }
 
@@ -1208,7 +1230,6 @@ footer {
                             display: flex;
                             .crown{
                                 font-size: 20px;
-                                color: #AC5409;
                             }
                             .animeter-rank{
                                 padding-left: 10px;
@@ -1218,7 +1239,6 @@ footer {
                             }
                             .animeter-bronz{
                                 font-size: 20px;
-                                color: #AC5409;
                                 padding-left: 5px;
                             }
                         }

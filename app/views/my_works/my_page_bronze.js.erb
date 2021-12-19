@@ -1,0 +1,1 @@
+document.getElementById('my_work_<%= @work.id %>').innerHTML = '<%= escape_javascript(render 'users/rank',work:@work,my_work:@my_work) %>'

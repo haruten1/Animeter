@@ -17,7 +17,13 @@
     <body>
         <header>
             <div id="header-inner">
-                <h1 ><%= image_tag 'ロゴ３.png' , id: "header-logo"%></h1>
+                <% if logged_in? %>
+                    <h1>
+                        <%= link_to current_user do%><%= image_tag 'ロゴ３.png' , id: "header-logo"%><%end%>
+                    </h1>
+                <%else%>
+                <%end%>
+                
                 <nav id="header-nav">
                     <ul id="header-ul">
                         <% if logged_in? %>
