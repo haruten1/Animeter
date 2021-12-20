@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get "/works/form" => "works#form"
+  get "/works/search/:year/:season" => "works#search_season"
   get "/works/search" => "works#search"
   post "/my_work/gold/:id" => "my_works#gold" 
   post "/my_work/silver/:id" => "my_works#silver" 

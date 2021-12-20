@@ -10,9 +10,15 @@
                             <p class="my-name"><%= @user.name %></p>
                             <p class="my-id"><%= @user.Animeter_id %></p>
                         </div>
-                        <div class="profile-btn-area">
-                            <%= link_to "プロフィール編集", "/users/#{@user.id}/edit", class: "profile-btn"%>
-                        </div>
+                        <%if @user.id==current_user.id%>
+                            <div class="profile-btn-area">
+                                <%= link_to "プロフィール編集", "/users/#{@user.id}/edit", class: "profile-btn"%>
+                            </div>
+                        <%else%>
+                            <div class="profile-btn-area">
+                                <%= link_to "Animeterを実行", "/animeter/#{@user.id}", class: "profile-btn"%>
+                            </div>
+                        <%end%>
                     </div>
                     <div class="my-anime-area">
                         <div class="my-anime-area-inner">

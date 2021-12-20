@@ -1,0 +1,27 @@
+
+<main>
+    <div id="main-inner">
+        <div class="search-area search-result-area">
+            <h2 id="search-title">
+                <%= params[:year]%>年
+                <%if params[:season]=="1"%>
+                    ・春
+                <%elsif params[:season]=="2"%>
+                    ・夏
+                <%elsif params[:season]=="3"%>
+                    ・秋
+                <%elsif params[:season]=="4"%>
+                    ・冬
+                <%end%>
+                のアニメ
+            </h2>
+        </div>
+        <div id="anime-search-result-area">
+            <% @works.each do |work| %>
+                <article class="my-anime-article" id="work_<%= work.id %>" >
+                    <%= render 'rank', work:work %>
+                </article>
+            <% end%>
+        </div>
+    </div>
+</main>
