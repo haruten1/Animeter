@@ -38,3 +38,6 @@ show tables；
 show columns from テーブル名;
 
 SELECT * FROM users;
+
+michael@example.com
+foobar

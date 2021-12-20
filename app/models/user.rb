@@ -8,8 +8,8 @@ class User < ApplicationRecord
 
     has_many :my_works
 
-    def ranked_by?(work_id)
-        works= MyWork.find_by(work_id: work_id)
+    def ranked_by?(work_id,user_id)
+        works= MyWork.find_by(work_id: work_id, user_id:user_id)
         
         return works
     end

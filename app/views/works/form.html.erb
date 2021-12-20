@@ -2,18 +2,107 @@
         <main>
             <div id="main-inner">
                 <div class="search-area search-result-area">
-                    <h2 id="search-title">検索</h2>
+                    <h2 id="search-title">アニメ検索</h2>
                     <div id="keyword-search-area">
-                        <form id="search-form" action="自分のサイトURL" method="get">
-                            <input id="sbox1"  name="s" type="text" placeholder="作品名" />
-                            <input id="sbtn1" type="submit" value="検索" />
-                        </form>
-                        
                         <%= form_with url: works_search_path, method: :get, local: true ,id:"search-form" do |form| %>
                             <%= text_field_tag :search,"",{id:"sbox1"} %>
                             <%= submit_tag 'Search', :name => nil ,id:"sbtn1"%>
                         <% end %>
-
+                    </div>
+                    <div id="by-year-area">
+                        <h3 class="by-year-title">年代で探す</h3>
+                        <div id="by-year-select-area">
+                            <div class="by-year-box">
+                                <h3 class="by-year-year"><a href="">2021年</a></h3>
+                                <div class="by-year-season-area">
+                                    <%= link_to "2021年・冬", "/works/search/2021/4", class:"by-year-season"%>
+                                    <%= link_to "2021年・春", "/works/search/2021/1", class:"by-year-season"%>
+                                    <%= link_to "2021年・夏", "/works/search/2021/2", class:"by-year-season"%>
+                                    <%= link_to "2021年・秋", "/works/search/2021/3", class:"by-year-season"%>
+                                </div>
+                            </div>
+                            <div class="by-year-box">
+                                <h3 class="by-year-year"><a href="">2020年</a></h3>
+                                <div class="by-year-season-area">
+                                    <%= link_to "2020年・冬", "/works/search/2020/4", class:"by-year-season"%>
+                                    <%= link_to "2020年・春", "/works/search/2020/1", class:"by-year-season"%>
+                                    <%= link_to "2020年・夏", "/works/search/2020/2", class:"by-year-season"%>
+                                    <%= link_to "2020年・秋", "/works/search/2020/3", class:"by-year-season"%>
+                                </div>
+                            </div>
+                            <div class="by-year-box">
+                                <h3 class="by-year-year"><a href="">2019年</a></h3>
+                                <div class="by-year-season-area">
+                                    <%= link_to "2019年・冬", "/works/search/2019/4", class:"by-year-season"%>
+                                    <%= link_to "2019年・春", "/works/search/2019/1", class:"by-year-season"%>
+                                    <%= link_to "2019年・夏", "/works/search/2019/2", class:"by-year-season"%>
+                                    <%= link_to "2019年・秋", "/works/search/2019/3", class:"by-year-season"%>
+                                </div>
+                            </div>
+                            <div class="by-year-box">
+                                <h3 class="by-year-year"><a href="">2018年</a></h3>
+                                <div class="by-year-season-area">
+                                    <%= link_to "2018年・冬", "/works/search/2018/4", class:"by-year-season"%>
+                                    <%= link_to "2018年・春", "/works/search/2018/1", class:"by-year-season"%>
+                                    <%= link_to "2018年・夏", "/works/search/2018/2", class:"by-year-season"%>
+                                    <%= link_to "2018年・秋", "/works/search/2018/3", class:"by-year-season"%>
+                                </div>
+                            </div>
+                            <div class="by-year-box">
+                                <h3 class="by-year-year"><a href="">2017年</a></h3>
+                                <div class="by-year-season-area">
+                                    <%= link_to "2017年・冬", "/works/search/2017/4", class:"by-year-season"%>
+                                    <%= link_to "2017年・春", "/works/search/2017/1", class:"by-year-season"%>
+                                    <%= link_to "2017年・夏", "/works/search/2017/2", class:"by-year-season"%>
+                                    <%= link_to "2017年・秋", "/works/search/2017/3", class:"by-year-season"%>
+                                </div>
+                            </div>
+                            <div class="by-year-box">
+                                <h3 class="by-year-year"><a href="">2016年</a></h3>
+                                <div class="by-year-season-area">
+                                    <%= link_to "2016年・冬", "/works/search/2016/4", class:"by-year-season"%>
+                                    <%= link_to "2016年・春", "/works/search/2016/1", class:"by-year-season"%>
+                                    <%= link_to "2016年・夏", "/works/search/2016/2", class:"by-year-season"%>
+                                    <%= link_to "2016年・秋", "/works/search/2016/3", class:"by-year-season"%>
+                                </div>
+                            </div>
+                            <div class="by-year-box">
+                                <h3 class="by-year-year"><a href="">2015年</a></h3>
+                                <div class="by-year-season-area">
+                                    <%= link_to "2015年・冬", "/works/search/2015/4", class:"by-year-season"%>
+                                    <%= link_to "2015年・春", "/works/search/2015/1", class:"by-year-season"%>
+                                    <%= link_to "2015年・夏", "/works/search/2015/2", class:"by-year-season"%>
+                                    <%= link_to "2015年・秋", "/works/search/2015/3", class:"by-year-season"%>
+                                </div>
+                            </div>
+                            <div class="by-year-box">
+                                <h3 class="by-year-year"><a href="">2014年</a></h3>
+                                <div class="by-year-season-area">
+                                    <%= link_to "2014年・冬", "/works/search/2014/4", class:"by-year-season"%>
+                                    <%= link_to "2014年・春", "/works/search/2014/1", class:"by-year-season"%>
+                                    <%= link_to "2014年・夏", "/works/search/2014/2", class:"by-year-season"%>
+                                    <%= link_to "2014年・秋", "/works/search/2014/3", class:"by-year-season"%>
+                                </div>
+                            </div>
+                            <div class="by-year-box">
+                                <h3 class="by-year-year"><a href="">2013年</a></h3>
+                                <div class="by-year-season-area">
+                                    <%= link_to "2013年・冬", "/works/search/2013/4", class:"by-year-season"%>
+                                    <%= link_to "2013年・春", "/works/search/2013/1", class:"by-year-season"%>
+                                    <%= link_to "2013年・夏", "/works/search/2013/2", class:"by-year-season"%>
+                                    <%= link_to "2013年・秋", "/works/search/2013/3", class:"by-year-season"%>
+                                </div>
+                            </div>
+                            <div class="by-year-box">
+                                <h3 class="by-year-year"><a href="">2012年</a></h3>
+                                <div class="by-year-season-area">
+                                    <%= link_to "2012年・冬", "/works/search/2012/4", class:"by-year-season"%>
+                                    <%= link_to "2012年・春", "/works/search/2012/1", class:"by-year-season"%>
+                                    <%= link_to "2012年・夏", "/works/search/2012/2", class:"by-year-season"%>
+                                    <%= link_to "2012年・秋", "/works/search/2012/3", class:"by-year-season"%>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

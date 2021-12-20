@@ -4,15 +4,21 @@
                 <div class="mypage-area">
                     <div class="profile-area">
                         <div class="my-img-area">
-                            <img src="./img/pexels-photo-177809.jpeg" alt="" class="my-img">
+                            <%= image_tag 'pexels-photo-177809.jpeg' , class: "my-img"%>
                         </div>
                         <div class="my-name-area">
                             <p class="my-name"><%= @user.name %></p>
                             <p class="my-id"><%= @user.Animeter_id %></p>
                         </div>
-                        <div class="profile-btn-area">
-                            <a href="#" class="profile-btn">プロフィール編集</a>
-                        </div>
+                        <%if @user.id==current_user.id%>
+                            <div class="profile-btn-area">
+                                <%= link_to "プロフィール編集", "/users/#{@user.id}/edit", class: "profile-btn"%>
+                            </div>
+                        <%else%>
+                            <div class="profile-btn-area">
+                                <%= link_to "Animeterを実行", "/animeter/#{@user.id}", class: "profile-btn"%>
+                            </div>
+                        <%end%>
                     </div>
                     <div class="my-anime-area">
                         <div class="my-anime-area-inner">
@@ -22,58 +28,46 @@
                                 <input id="design" type="radio" name="tab_item">
                                 <label class="tab_item" for="design">登録アニメ</label>
                                 <div class="tab_content" id="all_content">
-                                  <div class="tab_content_description">
-                                    <article class="my-animelog-article">
-                                        <div class="animelog-name-area">
-                                            <img src="./img/pexels-photo-177809.jpeg" alt="" class="animelog-my-img">
-                                            <p class="my-animelog-my-name">Haruten</p>
-                                        </div>
-                                        <div class="animelog-text-area">
-                                            <p class="animelog-anime-title">吸血鬼すぐ死ぬ</p>
-                                            <p class="animelog-register">を登録しました</p>
-                                        </div>
-                                        <div class="animelog-bottom-area">
-                                            <div class="animelog-rank-area">
-                                                <p class="animelog-rank">Rank</p>
-                                                <p class="animelog-bronz">Bronz</p>
-                                            </div>
-                                            <div class="animelog-time-area">
-                                                <p class="animelog-time">2021-11-10-19:30</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="my-animelog-article">
-                                        <div class="animelog-name-area">
-                                            <img src="./img/pexels-photo-177809.jpeg" alt="" class="animelog-my-img">
-                                            <p class="my-animelog-my-name">Haruten</p>
-                                        </div>
-                                        <div class="animelog-text-area">
-                                            <p class="animelog-anime-title">吸血鬼すぐ死ぬ</p>
-                                        </div>
-                                        <div class="animelog-bottom-area">
-                                            <div class="animelog-rank-area">
-                                                <p class="animelog-rank">Rank</p>
-                                                <p class="animelog-bronz">Bronz</p>
-                                            </div>
-                                            <div class="animelog-time-area">
-                                                <p class="animelog-time">2021-11-10-19:30</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                  </div>
+                                    <div class="tab_content_description">
+                                        <% @my_works_log.each do |my_work_log| %>
+                                            <%my_work= my_work_log.whats_work(my_work_log.work_id)%>
+                                            <article class="my-animelog-article">
+                                                <div class="animelog-name-area">
+                                                    <%= image_tag 'pexels-photo-177809.jpeg' , class: "animelog-my-img"%>
+                                                    <p class="my-animelog-my-name"><%= @user.name %></p>
+                                                </div>
+                                                <div class="animelog-text-area">
+                                                    <p class="animelog-anime-title"><%=my_work.title%></p>
+                                                    <p class="animelog-register">を登録しました</p>
+                                                </div>
+                                                <div class="animelog-bottom-area">
+                                                    <div class="animelog-rank-area">
+                                                        <p class="animelog-rank">Rank</p>
+                                                        <%if my_work_log.rank==1%>
+                                                            <p class="animelog-rank-name bronze">Bronz</p>
+                                                        <%elsif my_work_log.rank==2%>
+                                                            <p class="animelog-rank-name silver">Silver</p>
+                                                        <%elsif my_work_log.rank==3%>
+                                                            <p class="animelog-rank-name gold">Gold</p>
+                                                        <%end%>
+                                                    </div>
+                                                    <div class="animelog-time-area">
+                                                        <p class="animelog-time"><%=my_work_log.updated_at.strftime('%Y/%m/%d %H:%M')%></p>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        <% end %>
+                                    </div>
                                 </div>
                                 <div class="tab_content" id="design_content">
                                   <div class="tab_content_description">
-                                    <article class="my-anime-article">
-                                        <div class="my-anime-rank-area">
-                                            <i class="fas fa-crown my-anime-bronz crown"></i>
-                                            <p class="my-anime-rank">Rank</p>
-                                            <p class="my-anime-bronz">Bronz</p>
-                                        </div>
-                                        <div class="my-anime-text-area">
-                                            <p class="my-anime-title"><%= @work.title%></p>
-                                        </div>
-                                    </article>
+                                    <% @my_works.each do |my_work| %>
+                                        <%work=my_work.whats_work(my_work.work_id)%>
+                                        <article class="my-anime-article" id="my_work_<%= work.id%>" %>
+                                            <%= render 'rank', my_work:my_work,work:work %>
+                                            
+                                        </article>
+                                    <% end%>
                                   </div>
                                 </div>
                               </div>
