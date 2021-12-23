@@ -9,8 +9,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @my_works = MyWork.where(user_id:params[:id])
-    @my_works_log = @my_works.first(5)
-    @my_works.order(rank: "DESC") 
+    @my_works_log = @my_works.order(updated_at: :desc)
+    @my_works_log = @my_works_log.first(10)
+
+    @my_works = @my_works.order(rank: :desc)
     
   end
 
@@ -43,6 +45,10 @@ class UsersController < ApplicationController
   end
 
   def search
+    search = params[:search]
+      if search==""
+        redirect_to "/users/form"
+      end
     @users = User.where('Animeter_id LIKE ?', "%#{params[:search]}%") if params[:search].present?
     @user_name =params[:search]
   end

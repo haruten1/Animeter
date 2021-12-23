@@ -30,9 +30,8 @@
                 <nav id="header-nav">
                     <ul id="header-ul">
                         <% if logged_in? %>
-                            <li><%= link_to "マイページ", current_user , class: "btn btn--orange" , id: "header-li"%></li>
-                            <li><%= link_to "ログアウト", logout_path, method:"delete", class:"btn btn--orange",id: "header-li" %></li>
-                            <li>
+                            <li id="header-li"><%= link_to "マイページ", current_user , class: "btn btn--orange"%></li>
+                            <li id="header-li">
                                 <input type="checkbox" id="cp_navimenuid">
                                 <label class="menu" for="cp_navimenuid">
                                     <div class="menubar">
@@ -43,13 +42,13 @@
                                     <ul>
                                         <li><%= link_to "ユーザー検索","/users/form"%></li>
                                         <li><%= link_to "アニメ検索","/works/form"%></li>
+                                        <li><%= link_to "ログアウト", logout_path, method:"delete" %></li>
                                     </ul>
                                 </label>
-                            <li>
+                            </li>
                         <% else %>
-                            <%= link_to "新規登録", signup_path, class: "btn btn--orange" , id: "header-li"%>
-                            <%= link_to "ログイン", login_path, class: "btn btn--orange" , id: "header-li"%>
-                            
+                            <li id="header-li"><%= link_to "新規登録", signup_path, class: "btn btn--orange" , id: "header-li"%></li>
+                            <li id="header-li"><%= link_to "ログイン", login_path, class: "btn btn--orange" , id: "header-li"%></li>
                         <% end %>
                     </ul>
                 </nav>

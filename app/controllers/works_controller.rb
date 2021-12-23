@@ -3,6 +3,10 @@ class WorksController < ApplicationController
     end
 
     def search
+        search = params[:search]
+            if search==""
+                redirect_to "/works/form"
+            end
         @works = Work.where('title LIKE ?', "%#{params[:search]}%") if params[:search].present?
         @title = params[:search]
     end
