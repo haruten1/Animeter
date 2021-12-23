@@ -6,12 +6,14 @@
                     <p class="my-anime-rank">Rank</p>
                     <p class="my-anime-rank-result bronze">Bronze</p>
                 </div>
-                <div class="my_anime_rank_update-area">
+                <%if @user.id==current_user.id%>
+                    <div class="my_anime_rank_update-area">
                     <i class="fas fa-sync-alt"></i>
                     <%= link_to"/my_page/my_work/gold/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown gold crown"></i><% end %>
                     <%= link_to"/my_page/my_work/silver/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown silver crown"></i><% end %>
                     <%= link_to"/my_page/my_work/delete/#{work.id}", method: "delete",remote: "true" do%><i class="fas fa-trash-alt trash"></i><% end %>
-                </div>   
+                    </div>  
+                <%end%>
             </div>
         <%elsif my_work.rank==2%>
             <div class="my-anime-rank-wrapper">
@@ -20,13 +22,15 @@
                     <p class="my-anime-rank">Rank</p>
                     <p class="my-anime-rank-result silver">Silver</p>
                 </div>
-                <div class="my_anime_rank_update-area">
-                    <i class="fas fa-sync-alt"></i>
-                    <%= link_to"/my_page/my_work/gold/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown gold crown"></i><% end %>
-                    <%= link_to"/my_page/my_work/bronze/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown bronze crown"></i><% end %>
-                    <%= link_to"/my_page/my_work/delete/#{work.id}", method: "delete",remote: "true" do%><i class="fas fa-trash-alt trash"></i><% end %>
-                </div>   
-            </div>
+                <%if @user.id==current_user.id%>
+                    <div class="my_anime_rank_update-area">
+                        <i class="fas fa-sync-alt"></i>
+                        <%= link_to"/my_page/my_work/gold/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown gold crown"></i><% end %>
+                        <%= link_to"/my_page/my_work/bronze/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown bronze crown"></i><% end %>
+                        <%= link_to"/my_page/my_work/delete/#{work.id}", method: "delete",remote: "true" do%><i class="fas fa-trash-alt trash"></i><% end %>
+                    </div>   
+                <%end%>
+                </div>
         <%elsif my_work.rank==3%>
             <div class="my-anime-rank-wrapper">
                 <div class="my-anime-rank-area">
@@ -34,28 +38,32 @@
                     <p class="my-anime-rank">Rank</p>
                     <p class="my-anime-rank-result gold">Gold</p>
                 </div>
-                <div class="my_anime_rank_update-area">
-                    <i class="fas fa-sync-alt"></i>
-                    <%= link_to"/my_page/my_work/silver/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown silver crown"></i><% end %>
-                    <%= link_to"/my_page/my_work/bronze/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown bronze crown"></i><% end %>
-                    <%= link_to"/my_page/my_work/delete/#{work.id}", method: "delete",remote: "true" do%><i class="fas fa-trash-alt trash"></i><% end %>
-                </div>   
+                <%if @user.id==current_user.id%>
+                    <div class="my_anime_rank_update-area">
+                        <i class="fas fa-sync-alt"></i>
+                        <%= link_to"/my_page/my_work/silver/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown silver crown"></i><% end %>
+                        <%= link_to"/my_page/my_work/bronze/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown bronze crown"></i><% end %>
+                        <%= link_to"/my_page/my_work/delete/#{work.id}", method: "delete",remote: "true" do%><i class="fas fa-trash-alt trash"></i><% end %>
+                    </div>   
+                <%end%>
             </div>
     <%end%>
-    <%else%>
-            <div class="my-anime-rank-wrapper">
-                <div class="my-anime-rank-area">
-                    <p class="my-anime-rank">Rank</p>
-                    <p class="my-anime-bronz">None</p>
-                </div>
-                <div class="my_anime_rank_update-area">
-                    <i class="fas fa-plus "></i>
-                    <%= link_to"/my_page/my_work/gold/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown gold crown"></i><% end %>
-                    <%= link_to"/my_page/my_work/silver/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown silver crown"></i><% end %>
-                    <%= link_to"/my_page/my_work/bronze/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown bronze crown"></i><% end %>
-                </div>   
-            </div>
-    <%end%>
+<%else%>
+    <div class="my-anime-rank-wrapper">
+        <div class="my-anime-rank-area">
+            <p class="my-anime-rank">Rank</p>
+            <p class="my-anime-bronz">None</p>
+        </div>
+        <%if @user.id==current_user.id%>
+            <div class="my_anime_rank_update-area">
+                <i class="fas fa-plus "></i>
+                <%= link_to"/my_page/my_work/gold/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown gold crown"></i><% end %>
+                <%= link_to"/my_page/my_work/silver/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown silver crown"></i><% end %>
+                <%= link_to"/my_page/my_work/bronze/#{work.id}", method: "post",remote: "true" do%><i class="fas fa-crown bronze crown"></i><% end %>
+            </div> 
+        <%end%>
+    </div>
+<%end%>
         <div class="my-anime-text-area">
             <p class="my-anime-title"><%=work.title%></p>
         </div>
