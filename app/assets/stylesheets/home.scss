@@ -1,16 +1,4 @@
-@mixin box_sizing {
-    -moz-box-sizing:    border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing:         border-box;
-}
 
-.debug_dump {
-    clear: both;
-    float: left;
-    width: 100%;
-    margin-top: 45px;
-    @include box_sizing;
-}
 
 article{
     filter: drop-shadow(0px 1px 3px rgba(0,0,0,0.6));
@@ -458,8 +446,7 @@ th {
 }
 
 $pc: 1024px; // PC
-$tab: 680px; // タブレット
-$sp: 480px; // スマホ
+$sp: 810px; // スマホ
 
 @mixin pc {
     @media (max-width: ($pc)) {
@@ -480,6 +467,18 @@ $sp: 480px; // スマホ
 }
 
 
+
+.debug_dump {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 45px;
+    @include sp {
+        display: none;
+    }
+}
+
+
 body {
     background-color: #3E434D;
     font-family: 'Noto Sans JP', sans-serif;
@@ -487,13 +486,24 @@ body {
     color: #fff;
 }
 
+.alert{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.alert-danger{
+    background-color: #F16272;
+}
+
+.alert-success{
+    background-color: #29AAE2;
+}
+
 header {
     background-color: #2C364B;
     height: 80px;
 
-    @include sp {
-        height: 50px;
-    }
 
     ;
 
@@ -504,21 +514,18 @@ header {
         display: flex;
         justify-content: space-between;
 
-        @include sp {
-            height: 60px;
-        }
 
-        h1 {
+
+        .header-logo-wrapper{
             padding-left: 10px;
+            padding-top: 0;
 
             #header-logo {
                 height: 50px;
 
                 @include sp {
-                    height: 30px;
+                    height: 40px;
                 }
-
-                ;
             }
         }
 
@@ -528,7 +535,41 @@ header {
 
                 padding-right: 5px;
 
-                #header-li {
+                .header-li {
+                    margin-right: 10px;
+                    @include sp {
+                        margin-right: 5px;
+                        display: none;
+                    }
+                    .btn--orange,
+                    a.btn--orange {
+                        background-color: #f56500;
+                        border-radius: 5px;
+                        display: block;
+                        padding: 13px 10px 15px 10px;
+                        height: 45px;
+                        @include sp {
+                            height: 30px;
+                            padding: 5px 8px 5px 8px;
+                        }
+                    }
+                    .btn--orange:hover,
+                    a.btn--orange:hover {
+                        color: #fff;
+                        background: #eb6100;
+                    }
+                    
+                }
+                .header-li-sp{
+                    margin-right: 20px;
+                    margin-right: 10px;
+                    display: none;
+                    @include sp {
+                        display: inline;
+                        margin-top: 10px;
+                    }
+                }
+                .header-li-home{
                     margin-right: 10px;
                     .btn--orange,
                     a.btn--orange {
@@ -537,6 +578,10 @@ header {
                         display: block;
                         padding: 13px 10px 15px 10px;
                         height: 45px;
+                        @include sp {
+                            padding: 10px 5px 10px 5px;
+                            height: 40px;
+                        }
                     }
                     .btn--orange:hover,
                     a.btn--orange:hover {
@@ -549,17 +594,17 @@ header {
     }
 }
 
+
+
 main {
     #main-inner {
         padding-top: 50px;
+        
         max-width: 1000px;
         margin: 0 auto;
-
         @include sp {
-            padding-top: 0;
+            padding-bottom: 80px;
         }
-
-        ;
 
         #top-img {
             #top-img-inner {
@@ -755,15 +800,52 @@ main {
         }
     }
 }
-
-footer {
+#footer-pc{
     background-color: #2C364B;
     height: 80px;
     text-align: center;
     padding-top: 30px;
-
     p {
         font-weight: 200;
+    }
+    @include sp {
+        display: none;
+    }
+}
+
+#footer-sp{
+    display: none;
+    background-color: #2C364B;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    #footer-sp-inner{
+        height: 80px;
+        padding-top: 20px;
+        #footer-sp-ul{
+            display: flex;
+            justify-content: space-around;
+            .footer-sp-li{
+                a{
+                    .fas{
+                        font-size: 40px;
+                    }
+                    .fa-users{
+                        color: #00ff00;
+                    }
+                    .fa-home{
+                        color: #ffa500;
+                    }
+                    .fa-tv{
+                        color:#00ffff;
+                    }
+                }
+            }
+        }
+    }
+    @include sp {
+        display: block;
     }
 }
 
@@ -812,7 +894,7 @@ footer {
     .my-anime-area{
         padding-top: 30px;
         .my-anime-area-inner{
-            width: 700px;
+            max-width: 680px;
             margin: 0 auto;
             padding-top: 30px;
             
@@ -892,6 +974,9 @@ footer {
                                 .animelog-anime-title{
                                     font-size: 30px;
                                     padding-right: 5px;
+                                    @include sp {
+                                        font-size: 23px;
+                                    }
                                 }
                                 .animelog-register{
                                     font-size: 20px;
@@ -934,7 +1019,11 @@ footer {
                                     }
                                     .crown{
                                         font-size: 30px;
+                                        @include sp {
+                                            font-size: 25px;
+                                        }
                                     }
+                                    
                                     p{
                                         display: inline-block;
                                     }
@@ -950,19 +1039,31 @@ footer {
                                     .fa-sync-alt{
                                         font-size: 20px;
                                         margin-right: 10px;
+                                        @include sp {
+                                            font-size: 15px;
+                                        }
                                     }
                                     .fa-plus{
                                         font-size: 20px;
                                         margin-right: 10px;
+                                        @include sp {
+                                            font-size: 15px;
+                                        }
                                     }
                                     a{
                                         margin-right: 10px;
                                     }
                                     .crown{
                                         font-size: 30px;
+                                        @include sp {
+                                            font-size: 25px;
+                                        }
                                     }
                                     .trash{
                                         font-size: 30px;
+                                        @include sp {
+                                            font-size: 25px;
+                                        }
                                     }
                                     
                                 }
@@ -976,6 +1077,9 @@ footer {
                                 .my-anime-title{
                                     font-size: 30px;
                                     padding-right: 5px;
+                                    @include sp {
+                                        font-size: 25px;
+                                    }
                                 }
                             }
                             
@@ -1003,10 +1107,12 @@ footer {
         margin-left: 10px;
         #search-form{
             margin-bottom: 50px;
+            padding: 0;
             #sbox1{
                 background:#eee;
                 height: 30px;
                 width: 65%;
+                min-width: 250px;
                 padding-left: 5px;
                 color: black;
             }
@@ -1015,6 +1121,7 @@ footer {
                 height: 30px;
                 width: 10%;
                 text-align: center;
+                min-width: 38px;
             }
             #sbtn1:hover {
                 background: #156C77;
@@ -1103,19 +1210,31 @@ footer {
                 .fa-sync-alt{
                     font-size: 20px;
                     margin-right: 10px;
+                    @include sp {
+                        font-size: 15px;
+                    }
                 }
                 .fa-plus{
                     font-size: 20px;
                     margin-right: 10px;
+                    @include sp {
+                        font-size: 15px;
+                    }
                 }
                 a{
                     margin-right: 10px;
                 }
                 .crown{
                     font-size: 30px;
+                    @include sp {
+                        font-size: 25px;
+                    }
                 }
                 .trash{
                     font-size: 30px;
+                    @include sp {
+                        font-size: 25px;
+                    }
                 }
                 
             }
@@ -1130,6 +1249,9 @@ footer {
             .my-anime-title{
                 font-size: 30px;
                 padding-right: 5px;
+                @include sp {
+                    font-size: 25px;
+                }
             }
         }
     }
@@ -1143,6 +1265,10 @@ footer {
         width: 50%;
         display: flex;
         margin-bottom: 20px;
+        min-width: px;
+        @include sp {
+            width: 100%;
+        }
         a{
             display: flex;
             width: 100%;
@@ -1210,9 +1336,13 @@ footer {
                 width: 70%;
                 margin: 0 auto;
                 padding: 10px 20px;
+                @include sp {
+                    width:95%;
+                }
                     .animeter-rank-area{
                         display: flex;
                         justify-content: space-between;
+                        margin-bottom: 5px;
                         .animeter-my-anime-rank-area{
                             display: flex;
                             .crown{
@@ -1250,14 +1380,17 @@ footer {
                     .animeter-title-area{
                         .animeter-title{
                             font-size: 33px;
+                            @include sp {
+                                font-size: 25px;
+                            }
                         }
                     }
                 }
             }
-            
         }
     }
 }
+
 
 *, *:before, *:after {
 	-webkit-box-sizing: border-box;
@@ -1340,3 +1473,6 @@ footer {
 #cp_navimenuid:checked ~ .menu > .menubar {
 	display: none;
 }
+
+
+
