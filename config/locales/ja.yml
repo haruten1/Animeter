@@ -3,7 +3,7 @@ ja:
     attributes:
       user:
           name: ユーザー名
-          Animeter＿id: 所属
+          Animeter_id: 検索用ID
           mail: メールアドレス
           password: パスワード
           password_confirmation: パスワード（確認)

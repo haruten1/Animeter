@@ -18,11 +18,11 @@
         <header>
             <div id="header-inner">
                 <% if logged_in? %>
-                    <h1>
+                    <h1 class="header-logo-wrapper">
                         <%= link_to current_user do%><%= image_tag 'ロゴ３.png' , id: "header-logo"%><%end%>
                     </h1>
                 <%else%>
-                    <h1>
+                    <h1 class="header-logo-wrapper">
                         <%= link_to "/" do%><%= image_tag 'ロゴ３.png' , id: "header-logo"%><%end%>
                     </h1>
                 <%end%>
@@ -30,8 +30,9 @@
                 <nav id="header-nav">
                     <ul id="header-ul">
                         <% if logged_in? %>
-                            <li id="header-li"><%= link_to "マイページ", current_user , class: "btn btn--orange"%></li>
-                            <li id="header-li">
+                            <li class="header-li"><%= link_to "マイページ", current_user , class: "btn btn--orange"%></li>
+                            <li class="header-li-sp"><%= link_to "ログアウト", logout_path, method:"delete" %></li>
+                            <li class="header-li">
                                 <input type="checkbox" id="cp_navimenuid">
                                 <label class="menu" for="cp_navimenuid">
                                     <div class="menubar">
@@ -47,8 +48,8 @@
                                 </label>
                             </li>
                         <% else %>
-                            <li id="header-li"><%= link_to "新規登録", signup_path, class: "btn btn--orange" , id: "header-li"%></li>
-                            <li id="header-li"><%= link_to "ログイン", login_path, class: "btn btn--orange" , id: "header-li"%></li>
+                            <li class="header-li-home"><%= link_to "新規登録", signup_path, class: "btn btn--orange" , id: "header-li"%></li>
+                            <li class="header-li-home"><%= link_to "ログイン", login_path, class: "btn btn--orange" , id: "header-li"%></li>
                         <% end %>
                     </ul>
                 </nav>
@@ -58,14 +59,18 @@
             <div class="alert alert-<%= message_type %>"><%= message %></div>
         <% end %>
         <%= yield %>
-        <footer>
-            <div id="footer-pc">
+        <footer id="footer-pc">
+            <div id="footer-pc-inner">
                 <p>©︎2021Animeter</p>
             </div>
-            <div id="footer-sp">
-                <div class="footer-sp-inner">
-                    
-                </div>
+        </footer>
+        <footer id="footer-sp">
+            <div id="footer-sp-inner">
+                <ul id="footer-sp-ul">
+                    <li class="footer-sp-li"><%= link_to "/users/form" do%><i class="fas fa-users"></i><%end%></li>
+                    <li class="footer-sp-li"><%= link_to current_user do%><i class="fas fa-home"></i><%end%></li>
+                    <li class="footer-sp-li"><%= link_to "/works/form" do%><i class="fas fa-tv"></i><%end%></li>
+                </ul>
             </div>
         </footer>
 
