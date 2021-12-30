@@ -4,20 +4,22 @@
                 <div class="mypage-area">
                     <div class="profile-area">
                         <div class="my-img-area">
-                            <%= image_tag 'pexels-photo-177809.jpeg' , class: "my-img"%>
+                            <%= image_tag "#{@user.img}" , class: "my-img"%>
                         </div>
                         <div class="my-name-area">
                             <p class="my-name"><%= @user.name %></p>
                             <p class="my-id"><%= @user.Animeter_id %></p>
                         </div>
-                        <%if @user.id==current_user.id%>
-                            <div class="profile-btn-area">
-                                <%= link_to "プロフィール編集", "/users/#{@user.id}/edit", class: "profile-btn"%>
-                            </div>
-                        <%else%>
-                            <div class="profile-btn-area">
-                                <%= link_to "Animeterを実行", "/animeter/#{@user.id}", class: "profile-btn"%>
-                            </div>
+                        <%if current_user%>
+                            <%if @user.id==current_user.id%>
+                                <div class="profile-btn-area">
+                                    <%= link_to "プロフィール編集", "/users/#{@user.id}/edit", class: "profile-btn"%>
+                                </div>
+                            <%else%>
+                                <div class="profile-btn-area">
+                                    <%= link_to "Animeterを実行", "/animeter/#{@user.id}", class: "profile-btn"%>
+                                </div>
+                            <%end%>
                         <%end%>
                     </div>
                     <div class="my-anime-area">
@@ -33,7 +35,7 @@
                                             <%my_work= my_work_log.whats_work(my_work_log.work_id)%>
                                             <article class="my-animelog-article">
                                                 <div class="animelog-name-area">
-                                                    <%= image_tag 'pexels-photo-177809.jpeg' , class: "animelog-my-img"%>
+                                                    <%= image_tag "#{@user.img}" , class: "animelog-my-img"%>
                                                     <p class="my-animelog-my-name"><%= @user.name %></p>
                                                 </div>
                                                 <div class="animelog-text-area">

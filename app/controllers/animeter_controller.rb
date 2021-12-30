@@ -1,5 +1,9 @@
 class AnimeterController < ApplicationController
+    before_action :logged_in_user
+
     def animeter
+        @your_user = User.find(params[:id])
+
         your_works =MyWork.where(user_id:params[:id])
         your_works_array = Array.new
 
@@ -22,6 +26,14 @@ class AnimeterController < ApplicationController
         common_works_arry.each do |work_id|
             common_work=Work.where(id: work_id)
             @common_works.push(common_work)
+        end
+    end
+
+    private
+    def logged_in_user
+        unless logged_in?
+            flash[:danger] = "ログインしてください"
+            redirect_to login_url
         end
     end
 end

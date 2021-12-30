@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to user
     else
       # エラーメッセージを作成する
-      flash[:danger] = 'Email/パスワードが違います'
+      flash.now[:danger] = 'Email/パスワードが違います'
       render 'new'
     end
   end

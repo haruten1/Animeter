@@ -1300,88 +1300,101 @@ main {
 
 
 
-
-.animeter-area{
-    .animeter-img-area{
-        text-align: center;
-        .animeter-img{
-            width: 220px;
-            margin: 0 auto;
-        }
-    }
-    .animeter-user-area{
-        display: flex;
-        margin-bottom: 50px;
-        .animeter-user-img{
-            border-radius: 50%;
-                width: 100px;
-                height: 100px;
-                object-fit: cover;
-                margin: 0 auto;
-                display: block;
-        }
-    }
-    .animeter-result-area{
-        .meter-area{
-            text-align: center;
-            margin-bottom: 30px;
-            .meter-img{
-                width: 176px;
-                margin-bottom: 30px;
-            }
-            .animeter-article-cover{
-                margin-bottom: 30px;
-                .animeter-article{
-                background-color: #35373E;
-                width: 70%;
-                margin: 0 auto;
-                padding: 10px 20px;
-                @include sp {
-                    width:95%;
+.animeter-main{
+    background: rgb(58,62,238);
+background: linear-gradient(90deg, rgba(58,62,238,0.6003588935574229) 0%, rgba(124,62,174,0) 35%, rgba(148,62,151,0) 65%, rgba(241,61,61,0.6031600140056023) 100%);
+    #main-inner{
+        .animeter-area{
+            .animeter-img-area{
+                text-align: center;
+                .animeter-img{
+                    width: 220px;
+                    margin: 0 auto;
                 }
-                    .animeter-rank-area{
-                        display: flex;
-                        justify-content: space-between;
-                        margin-bottom: 5px;
-                        .animeter-my-anime-rank-area{
-                            display: flex;
-                            .crown{
-                                font-size: 20px;
-                            }
-                            .animeter-rank{
-                                padding-left: 10px;
-                                padding-top: 4px;
-                                font-size: 15px;
-                                font-weight: 300;
-                            }
-                            .animeter-bronz{
-                                font-size: 20px;
-                                padding-left: 5px;
-                            }
-
-                        }
-                        .animeter-you-anime-rank-area{
-                            display: flex;
-                            .crown{
-                                font-size: 20px;
-                            }
-                            .animeter-rank{
-                                padding-left: 10px;
-                                padding-top: 4px;
-                                font-size: 15px;
-                                font-weight: 300;
-                            }
-                            .animeter-bronz{
-                                font-size: 20px;
-                                padding-left: 5px;
-                            }
-                        }
+            }
+            .animeter-user-area{
+                display: flex;
+                margin-bottom: 50px;
+                justify-content: space-around;
+                .animeter-user{
+                    text-align: center;
+                    .animeter-user-img{
+                        border-radius: 50%;
+                        width: 100px;
+                        height: 100px;
+                        object-fit: cover;
+                        margin: 0 auto;
+                        display: block;
                     }
-                    .animeter-title-area{
-                        .animeter-title{
-                            font-size: 33px;
-                            @include sp {
-                                font-size: 25px;
+                    .animeter-name{
+                        font-size: 20px;
+                    }
+
+                }
+            }
+            .animeter-result-area{
+                .meter-area{
+                    text-align: center;
+                    padding-bottom: 30px;
+                    .meter-img{
+                        width: 176px;
+                        margin-bottom: 30px;
+                    }
+                    .animeter-article-cover{
+                        margin-bottom: 30px;
+                        .animeter-article{
+                        background-color: #35373E;
+                        width: 70%;
+                        margin: 0 auto;
+                        padding: 10px 20px;
+                        @include sp {
+                            width:95%;
+                        }
+                            .animeter-rank-area{
+                                display: flex;
+                                justify-content: space-between;
+                                margin-bottom: 5px;
+                                .animeter-my-anime-rank-area{
+                                    display: flex;
+                                    .crown{
+                                        font-size: 20px;
+                                    }
+                                    .animeter-rank{
+                                        padding-left: 10px;
+                                        padding-top: 4px;
+                                        font-size: 15px;
+                                        font-weight: 300;
+                                    }
+                                    .animeter-bronz{
+                                        font-size: 20px;
+                                        padding-left: 5px;
+                                    }
+
+                                }
+                                .animeter-you-anime-rank-area{
+                                    display: flex;
+                                    .crown{
+                                        font-size: 20px;
+                                    }
+                                    .animeter-rank{
+                                        padding-left: 10px;
+                                        padding-top: 4px;
+                                        font-size: 15px;
+                                        font-weight: 300;
+                                    }
+                                    .animeter-bronz{
+                                        font-size: 20px;
+                                        padding-left: 5px;
+                                    }
+                                }
+                            }
+                            .animeter-title-area{
+                                .animeter-title{
+                                    font-size: 33px;
+                                    @include sp {
+                                        font-size: 25px;
+                                    }
+                                }
                             }
                         }
                     }
@@ -1473,6 +1486,3 @@ main {
 #cp_navimenuid:checked ~ .menu > .menubar {
 	display: none;
 }
-
-
-
