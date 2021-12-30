@@ -3,7 +3,6 @@
     <head>
         <title>Animeter</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="./style.css">
         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +30,7 @@
                     <ul id="header-ul">
                         <% if logged_in? %>
                             <li class="header-li"><%= link_to "マイページ", current_user , class: "btn btn--orange"%></li>
-                            <li class="header-li-sp"><%= link_to "ログアウト", logout_path, method:"delete" %></li>
+                            <li class="header-li-sp"><%= link_to "ログアウト", logout_path, method:"delete",id: "logout-rspec" %></li>
                             <li class="header-li">
                                 <input type="checkbox" id="cp_navimenuid">
                                 <label class="menu" for="cp_navimenuid">

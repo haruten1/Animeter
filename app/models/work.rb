@@ -1,5 +1,5 @@
 class Work < ApplicationRecord
-    enum season: { spring: 1, summer: 2, autumn: 3, winter: 4 }
+    enum season: { winter: 1, spring: 2, summer: 3, autumn: 4, }
     has_many:my_works
   
     # Annictから情報を取得
@@ -9,7 +9,7 @@ class Work < ApplicationRecord
   
       start_year = 1970 # どの年からデータを取得したいかを指定
       end_year = Date.today.year
-      seasons = ["spring", "summer", "autumn", "winter"]
+      seasons = ["winter","spring", "summer", "autumn"]
   
       (start_year..end_year).each do |year|
         seasons.each.with_index(1) do |season, index|

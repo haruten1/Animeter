@@ -16,7 +16,7 @@
                     <article class="user-article">
                         <%= link_to"/users/#{user.id}" do%>
                             <div class="user-search-result-img-area">
-                                <%= image_tag 'pexels-photo-177809.jpeg' , class:"user-search-result-img" %>
+                                <%= image_tag "#{user.img}" , class: "user-search-result-img"%>
                             </div>
                             <div class="user-search-result-name-area">
                                 <p class="user-search-result-name"><%= user.name %></p>

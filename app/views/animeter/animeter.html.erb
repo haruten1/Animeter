@@ -1,12 +1,18 @@
-<main>
-    <div id="main-inner">
+<main class="animeter-main">
+    <div id="main-inner" class="animeter-inner">
         <div class="animeter-area">
             <h2 class="animeter-img-area">
                 <%= image_tag 'ロゴ３.png' , class: "animeter-img"%>
             </h2>
             <div class="animeter-user-area">
-                <%= image_tag 'pexels-photo-177809.jpeg' , class: "animeter-user-img"%>
-                <%= image_tag 'pexels-photo-177809.jpeg' , class: "animeter-user-img"%>
+                <div class="animeter-user">
+                    <%= image_tag "#{current_user.img}" , class: "animeter-user-img"%>
+                    <p class="animeter-name"><%= current_user.name %></p>
+                </div>
+                <div class="animeter-user">
+                    <%= image_tag "#{@your_user.img}" , class: "animeter-user-img"%>
+                    <p class="animeter-name"><%= @your_user.name %></p>
+                </div>
             </div>
             <%zero_meter_count= 0 %>
             <%two_meter_count=0%>

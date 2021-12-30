@@ -28,6 +28,12 @@
                     <%= f.label :password_confirmation, "パスワード（確認）" %>
                     <%= f.password_field :password_confirmation%>
                 </div>
+
+                <div class="form-img">
+                    <%= f.label :img, "プロフィール画像" %>
+                    <%= f.file_field :img%>
+                </div>
+                
                 <div class="button-panel">
                     <%= f.submit "登録", class:"button" %>
                 </div>
