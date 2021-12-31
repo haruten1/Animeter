@@ -51,5 +51,3 @@ test:
 production:
   <<: *default
   database: Animeter_production
-  username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
