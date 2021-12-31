@@ -5,7 +5,7 @@ class Work < ApplicationRecord
     # Annictから情報を取得
     def import_from_annict
       base_url = "https://api.annict.com/v1"
-      access_token = ENV["ANNICT_ACCESS_TOKEN"]
+      access_token = "J-eGSYypO1u7UY5QTvLs-jtRBuLhXSaX5BVfOGe24HQ"
   
       start_year = 1970 # どの年からデータを取得したいかを指定
       end_year = Date.today.year
