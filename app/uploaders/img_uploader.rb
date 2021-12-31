@@ -10,7 +10,7 @@ class ImgUploader < CarrierWave::Uploader::Base
   elsif Rails.env.test? # テスト環境の場合
     storage :file
   else # 本番環境の場合
-    storage :fog
+    storage :file
   end
   # storage :fog
   # storage :fog
