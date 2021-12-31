@@ -8,7 +8,7 @@ class User < ApplicationRecord
     mount_uploader :img, ImgUploader
     has_one_attached :img
     validate :img_content_type, if: :was_attached?
-    validates :img, presence: true
+    # validates :img, presence: true
 
     has_many :my_works
 
