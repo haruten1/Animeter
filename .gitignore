@@ -12,6 +12,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+!/tmp/mysql.sock
+
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
