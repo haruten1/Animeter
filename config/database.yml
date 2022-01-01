@@ -48,7 +48,7 @@ test:
 #
 production:
   <<: *default
-  database: <%= Rails.application.credentials.db[:database] %>
+  database: Animeter_production
   username: <%= Rails.application.credentials.db[:username] %>
   password: Yatusiro88@
   socket: /var/lib/mysql/mysql.sock
