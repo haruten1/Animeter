@@ -19,7 +19,7 @@ class User < ApplicationRecord
     end
 
     def img_content_type
-        extension = ['image/png', 'image/jpg', 'image/jpeg','image/HEIC']
+        extension = ['image/png', 'image/jpg', 'image/jpeg','image/heic']
         errors.add(:img,"ファイルを選んでください") unless img.content_type.in?(extension)
     end
 
