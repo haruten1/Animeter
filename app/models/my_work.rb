@@ -7,4 +7,9 @@ class MyWork < ApplicationRecord
         my_work= Work.find_by(id:work_id)
         return my_work
     end
+
+    def who_user(user_id)
+        user=User.find_by(id:user_id)
+        return user
+    end
 end
