@@ -816,13 +816,13 @@ main {
 #footer-sp{
     display: none;
     background-color: #2C364B;
-    height: 80px;
+    height: 70px;
     position: fixed;
     bottom: 0;
     width: 100%;
     #footer-sp-inner{
-        height: 80px;
-        padding-top: 20px;
+
+        padding-top: 15px;
         #footer-sp-ul{
             display: flex;
             justify-content: space-around;
@@ -1082,6 +1082,11 @@ main {
                                     }
                                 }
                             }
+                            .myanime-season_name_text-area{
+                                margin-top: 10px;
+                                text-align: right;
+                                color:lightslategray;
+                            }
                             
                         }
                     }
@@ -1242,7 +1247,7 @@ main {
         }
         .my-anime-text-area{
             text-align: center;
-            padding-top: 10px;
+            padding-top: 15px;
             p{
                 display: inline-block;
             }
@@ -1253,6 +1258,11 @@ main {
                     font-size: 25px;
                 }
             }
+        }
+        .myanime-season_name_text-area{
+            margin-top: 10px;
+            text-align: right;
+            color:lightslategray;
         }
     }
 }
@@ -1461,7 +1471,6 @@ background: linear-gradient(90deg, rgba(58,62,238,0.6003588935574229) 0%, rgba(1
 }
 .menu ul li a:hover {
 	color: #f56500;
-	// background-color: #1b2538;
 }
 .menu ul li a:target {
 	border-bottom-color: #1b2538;
