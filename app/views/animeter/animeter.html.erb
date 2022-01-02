@@ -19,6 +19,10 @@
             <%three_meter_count=0%>
             <%four_meter_count=0%>
             <div class="animeter-result-area">
+                <%if @common_works.present?%>
+                <%else%>
+                    <p class="animeter-non">マッチするアニメはありませんでした...</p>
+                <%end%>
                 <% @common_works.each do |work| %>
                     <% work.each do |work_2| %>
                         <%my_work=work_2.whats_rank(work_2.id,current_user.id)%>
@@ -244,6 +248,7 @@
                         <%end%>
                     <% end%>
                 <% end%>
+                
             </div>
         </div>
     </div>

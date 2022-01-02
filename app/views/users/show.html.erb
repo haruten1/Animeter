@@ -12,9 +12,12 @@
                         </div>
                         <%if current_user%>
                             <%if @user.id==current_user.id%>
-                                <div class="profile-btn-area">
-                                    <%= link_to "プロフィール編集", "/users/#{@user.id}/edit", class: "profile-btn"%>
-                                </div>
+                                <%if current_user.Animeter_id=="test"%>
+                                <%else%>
+                                    <div class="profile-btn-area">
+                                        <%= link_to "プロフィール編集", "/users/#{@user.id}/edit", class: "profile-btn"%>
+                                    </div>
+                                <%end%>
                             <%else%>
                                 <div class="profile-btn-area">
                                     <%= link_to "Animeterを実行", "/animeter/#{@user.id}", class: "profile-btn"%>
@@ -66,8 +69,7 @@
                                     <% @my_works.each do |my_work| %>
                                         <%work=my_work.whats_work(my_work.work_id)%>
                                         <article class="my-anime-article" id="my_work_<%= work.id%>" %>
-                                                                                        <%= render 'rank', my_work:my_work,work:work %>
-
+                                            <%= render 'rank', my_work:my_work,work:work %>
                                         </article>
                                     <% end%>
                                   </div>

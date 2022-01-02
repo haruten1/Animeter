@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post "/users" =>"users#create"
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
+  post   '/login/test_user',   to: 'sessions#create_test_user'
   delete '/logout',  to: 'sessions#destroy'
   get "/works/form" => "works#form"
   get "/works/search/:year/:season" => "works#search_season"

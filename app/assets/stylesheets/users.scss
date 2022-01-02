@@ -96,6 +96,24 @@ $sp: 810px; // スマホ
 
         .button:hover {
             background: #ee3e52;
-        }
+        }      
     }
 }
+.test-user{
+        display: block;
+        padding-bottom: 40px;
+        text-align: center;
+        a{
+            background: #62b8f1;
+            border-radius: 5px;
+            color: #fff;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width: 250px;
+            display: block;
+            margin: 0 auto;
+        }
+        a:hover{
+            background: #1544a8;
+        }
+    }

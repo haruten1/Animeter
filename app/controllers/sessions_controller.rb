@@ -15,6 +15,13 @@ class SessionsController < ApplicationController
     end
   end
 
+  def create_test_user
+    user = User.find_by(Animeter_id:"test")
+    log_in user
+    flash[:success] = "ログインしました"
+    redirect_to user
+  end
+
   def destroy
     log_out
     flash[:success] = "ログアウトしました"

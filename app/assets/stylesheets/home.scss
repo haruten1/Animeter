@@ -1323,7 +1323,7 @@ background: linear-gradient(90deg, rgba(58,62,238,0.6003588935574229) 0%, rgba(1
             }
             .animeter-user-area{
                 display: flex;
-                margin-bottom: 50px;
+                padding-bottom: 50px;
                 justify-content: space-around;
                 .animeter-user{
                     text-align: center;
@@ -1342,6 +1342,11 @@ background: linear-gradient(90deg, rgba(58,62,238,0.6003588935574229) 0%, rgba(1
                 }
             }
             .animeter-result-area{
+                .animeter-non{
+                    font-size: 30px;
+                    text-align: center;
+                    padding-top: 40px;
+                }
                 .meter-area{
                     text-align: center;
                     padding-bottom: 30px;
