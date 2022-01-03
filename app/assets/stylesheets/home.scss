@@ -1325,8 +1325,10 @@ background: linear-gradient(90deg, rgba(58,62,238,0.6003588935574229) 0%, rgba(1
                 display: flex;
                 padding-bottom: 50px;
                 justify-content: space-around;
+                padding-top: 20px;
                 .animeter-user{
                     text-align: center;
+                    width: 45%;
                     .animeter-user-img{
                         border-radius: 50%;
                         width: 100px;
