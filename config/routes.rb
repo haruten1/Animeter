@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "/" => "home#top"
+  get "/privacy_policy" =>"home#privacy_policy"
   get "/signup" => "users#new"
   post "/users" =>"users#create"
   get    '/login',   to: 'sessions#new'
