@@ -28,11 +28,11 @@
                     <div class="my-anime-area">
                         <div class="my-anime-area-inner">
                             <div class="tabs">
-                                <input id="all" type="radio" name="tab_item" checked>
-                                <label class="tab_item" for="all">アニメログ</label>
-                                <input id="design" type="radio" name="tab_item">
-                                <label class="tab_item" for="design">登録アニメ</label>
-                                <div class="tab_content" id="all_content">
+                                <input id="left" type="radio" name="tab_item" checked>
+                                <label class="tab_item" for="left">アニメログ</label>
+                                <input id="right" type="radio" name="tab_item">
+                                <label class="tab_item" id="rspec-tab" for="right">登録アニメ</label>
+                                <div class="tab_content" id="left_content">
                                     <div class="tab_content_description">
                                         <% @my_works_log.each do |my_work_log| %>
                                             <%my_work= my_work_log.whats_work(my_work_log.work_id)%>
@@ -64,7 +64,7 @@
                                         <% end %>
                                     </div>
                                 </div>
-                                <div class="tab_content" id="design_content">
+                                <div class="tab_content" id="right_content">
                                   <div class="tab_content_description">
                                     <% @my_works.each do |my_work| %>
                                         <%work=my_work.whats_work(my_work.work_id)%>

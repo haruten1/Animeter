@@ -1,6 +1,5 @@
 class MyWorksController < ApplicationController
     protect_from_forgery
-    
     before_action:work_params
 
     def gold

@@ -11,8 +11,6 @@ RSpec.describe "UsersSignups", type: :system do
         click_on '登録'
         aggregate_failures do
             expect(current_path).to eq users_path
-            # expect(page).to have_content 'Sign up'
-            # expect(page).to have_content 'The form contains 4 errors'
         end
     end
 

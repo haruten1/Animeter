@@ -970,9 +970,9 @@ main {
                 }
                 
                 /*選択されているタブのコンテンツのみを表示*/
-                #all:checked ~ #all_content,
+                #left:checked ~ #left_content,
                 #programming:checked ~ #programming_content,
-                #design:checked ~ #design_content {
+                #right:checked ~ #right_content {
                     display: block;
                 }
                 

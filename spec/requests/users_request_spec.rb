@@ -41,6 +41,7 @@ RSpec.describe "Users", type: :request do
     #         get edit_user_path(user)
     #         expect(is_logged_in?).to be_truthy
     #         expect(response).to redirect_to "/"
+
             
     #     end
     

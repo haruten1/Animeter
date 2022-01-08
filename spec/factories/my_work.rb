@@ -1,9 +1,7 @@
 FactoryBot.define do
     factory :my_work do
-        rank { "3" }
-        user_id{"1"}
+        rank {"3"}
+        association :user
         work_id{"1"}
-        # association :user
-        # association :work
     end
 end

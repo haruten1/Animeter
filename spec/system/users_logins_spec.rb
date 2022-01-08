@@ -22,7 +22,8 @@ RSpec.describe "UsersLogins", type: :system do
         aggregate_failures do
             expect(current_path).to eq user_path(user)
         end
-        find('#logout-rspec').click
+        find('.menu').click
+        click_link "ログアウト"
         aggregate_failures do
             expect(current_path).to eq "/"
             expect(page).to have_link "ログイン", href: login_path

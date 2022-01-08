@@ -6,7 +6,6 @@ RSpec.describe "UsersEdits", type: :system do
     scenario 'it fails edit with wrong information' do
         login_as(user)
         click_on "プロフィール編集"
-
         fill_in 'user[name]', with: ' '
         fill_in 'user_Animeter_id', with: " "
         fill_in 'user[mail]', with: 'user@invalid'
