@@ -43,6 +43,7 @@ class UsersController < ApplicationController
   end
 
   def form
+    @users = User.all  
   end
 
   def search

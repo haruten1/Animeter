@@ -11,5 +11,21 @@
                     </div>
                     <p class="test-user"><%= link_to "Animeter開発者とAnimeter!","/animeter/1"%></p>
                 </div>
+                <div id="user-search-result-area">
+                    <h3 class="user-list">User List</h3>
+                    <% @users.each do |user| %>
+                        <article class="user-article">
+                            <%= link_to"/users/#{user.id}" do%>
+                                <div class="user-search-result-img-area">
+                                    <%= image_tag "#{user.img}" , class: "user-search-result-img"%>
+                                </div>
+                                <div class="user-search-result-name-area">
+                                    <p class="user-search-result-name"><%= user.name %></p>
+                                    <p class="user-search-result-id"><%= user.Animeter_id %></p>
+                                </div>
+                            <% end %>
+                        </article>
+                    <% end%>
+                </div>
             </div>
         </main>
