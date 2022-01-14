@@ -29,6 +29,7 @@ rake assets:clean
 
 mysql確認
 ※エラー 1046
+
 use Animeter_development;
 
 mysql -u root -p
