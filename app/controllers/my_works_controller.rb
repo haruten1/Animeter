@@ -10,6 +10,7 @@ class MyWorksController < ApplicationController
         else
             my_work=MyWork.create(user_id:session[:user_id],work_id: params[:id],rank: 3)
         end
+        #更新後のランクはview側で取得するため、更新後のmy_workをインスタンス変数として取得する必要はない
     end
 
     def silver
@@ -33,7 +34,6 @@ class MyWorksController < ApplicationController
     def delete
         exist_my_work=MyWork.find_by(user_id:session[:user_id],work_id: params[:id])
         exist_my_work.delete
-        @my_work = MyWork.find_by(user_id:session[:user_id],work_id:params[:id])
     end
 
     def my_page_gold
@@ -43,7 +43,7 @@ class MyWorksController < ApplicationController
         else
             my_work=MyWork.create(user_id:session[:user_id],work_id: params[:id],rank: 3)
         end
-        #更新後のランクを表示させるため、再度my_worksを取得
+        #更新後のランクを表示させるため、再度my_workを取得しJSファイルに渡す
         @my_work = MyWork.find_by(user_id:session[:user_id],work_id:params[:id])
     end
 
