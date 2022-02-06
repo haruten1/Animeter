@@ -35,3 +35,6 @@ AnnnictのAPIより、作品タイトル名と放送時期を取得していま�
 
 #テスト
  ・RSpec
+
+#URL
+animeter.jp
